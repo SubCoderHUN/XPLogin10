@@ -1,0 +1,10 @@
+; XPLogin10 - exports for the credential provider DLL.
+;
+; Only the two COM entry points. DllRegisterServer is deliberately absent:
+; registration goes through xplogin-install.exe so it can validate the plan
+; and write the recovery artefacts at the same time.
+LIBRARY XPLoginProvider
+
+EXPORTS
+    DllGetClassObject   PRIVATE
+    DllCanUnloadNow     PRIVATE

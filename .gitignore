@@ -1,0 +1,44 @@
+# Build output
+build/
+out/
+obj/
+*.o
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.tlog
+*.log
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+
+# Generated preview page (docs/preview/*.svg IS committed - see tools/preview-svg)
+preview.html
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# NOTE. There are deliberately no *.exe / *.dll / *.wav rules here.
+#
+# Those are the obvious things to filter out of a C++ repository, and they were
+# here originally - which silently swallowed logonui.exe, msgina.dll and every
+# sound file when the reference material was first added to assets/. The upload
+# looked like it had worked. The build/ and out/ rules above already keep
+# compiler output out of the tree, so the extension rules bought nothing and
+# cost a lot. If you add one back, exclude the reference material:  !assets/**

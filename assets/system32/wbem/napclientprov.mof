@@ -1,0 +1,33 @@
+//
+// NapClientProv.MOF
+//
+
+#PRAGMA AUTORECOVER
+#pragma namespace("\\\\.\\root")
+
+instance of __namespace
+{
+    Name = "nap";
+};
+
+#pragma namespace("\\\\.\\root\\nap")
+
+//
+//  Registers Framework Provider
+//
+instance of __Win32Provider as $NapCliProv
+{
+   Name = "Nap_ClientProvider";
+   ClsId = "{C330DE32-29C7-4cf2-9807-74BCB5486A37}";
+   HostingModel = "NetworkServiceHost";
+   PerUserInitialization = FALSE;
+};
+
+instance of __InstanceProviderRegistration
+{
+    Provider = $NAPCliProv;
+    SupportsGet = TRUE;
+    SupportsEnumeration = TRUE;    
+    SupportsPut = FALSE;
+    SupportsDelete = FALSE;
+};

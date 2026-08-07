@@ -1,0 +1,10 @@
+[ISP INFO]
+PhoneBookFile = PHONE.obe
+DUNFile = obeip.dun
+
+[URL]
+Signup=https://Icereg2.msn.com/offerst/default2.asp?Campaign=WINXPSP2&RunOnce=0&
+Reconnect=https://Icereg2.msn.com/offerst/default2.asp?Campaign=WINXPSP2&RunOnce=0&
+
+[Connection]
+StayConnected = 1

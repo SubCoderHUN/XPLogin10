@@ -1,0 +1,1596 @@
+[Version]
+Signature=$Windows NT$
+DriverVer=07/01/2001,5.1.2535.0
+
+
+[Applications]
+Adobe Photoshop Suite 6, %photoshop6%
+AIM, %AIM%
+BattleCom, %battlecom%
+CuteFTP 4, %cuteftp4%
+GameVoice 1, %gamevoice%
+GetRight 4, %GetRight4%
+ICQ, %ICQ%
+GoZilla, %GoZilla%
+MSN Explorer 10, %msnexp10%
+MSN Zone 6, %msnzone6%
+MS Netmeeting 3, %Netmeeting3%
+MS Messenger 36, %msmsgr36%
+MS Money 2001, %msmoney2001%
+MS Movie Maker 1, %msmvm1%
+Microsoft Works 2001, %Works_Suite_2001%
+Odigo, %Odigo%
+Prodigy Internet, %Prodigy%
+Quicken 2001, %Quicken2001%
+RealJukebox 2 Basic, %RealJukebox2%
+RogerWilco, %RogerWilco%
+Sonique, %Sonique%
+WinAmp, %WinAmp%
+WordPerfect Office 2000, %WordPerfectOffice_2000%
+WsFTPLE5, %WsFTPLE5%
+
+
+
+
+[Adobe Photoshop Suite 6.Environment]
+PhotoshopSuite6Path = Registry, %HklmWowSoftware%\Adobe\Photoshop\6.0\ApplicationPath []
+
+[Adobe Photoshop Suite 6.Detect.1]
+Registry, HKR\Software\Adobe\Photoshop\6.0, EXISTS
+File, %PhotoshopSuite6Path%\Photoshp.exe, VERSION("ProductVersion","6.*")
+
+[Adobe Photoshop Suite 6.Detect.2]
+Registry, HKR\Software\Adobe\ImageReady 3.0, EXISTS
+File, %PhotoshopSuite6Path%\ImageReady.exe, VERSION("ProductVersion","* 3.*")
+
+[Adobe Photoshop Suite 6.Instructions]
+ProcessSection = Adobe Photoshop 6
+ProcessSection = Adobe ImageReady 3
+
+[Adobe Photoshop 6.Environment]
+Photoshop6PersonalSettings = Registry, HKR\Software\Adobe\Photoshop\6.0 [SettingsFilePath]
+Photoshop6CommonColor = Directory, %CommonProgramFiles%\Adobe\Color
+
+[Adobe Photoshop 6.Detect]
+Registry, HKR\Software\Adobe\ImageReady 3.0, EXISTS
+File, %PhotoshopSuite6Path%\Photoshp.exe, VERSION("ProductVersion","6.*")
+
+[Adobe Photoshop 6.Instructions]
+AddReg = Adobe Photoshop 6.AddReg
+DelReg = Adobe Photoshop 6.DelReg
+DestDelReg = Adobe Photoshop 6.DestDelReg
+ForceSrcFile = Adobe Photoshop 6.ForceSrcFile
+CopyFiles = Adobe Photoshop 6.CopyFiles
+DelFiles = Adobe Photoshop 6.DelFiles
+
+[Adobe Photoshop 6.AddReg]
+HKR\Software\Adobe\Photoshop\6.0
+HKR\Software\Adobe\Photoshop6\6.0\Registration
+
+[Adobe Photoshop 6.DelReg]
+HKR\Software\Adobe\Photoshop\6.0 [AppWindowPosition]
+HKR\Software\Adobe\Photoshop\6.0 [PlugInDirectory]
+
+[Adobe Photoshop 6.DestDelReg]
+HKR\Software\Adobe\Photoshop\6.0 [AppWindowMaximized]
+HKR\Software\Adobe\Photoshop\6.0 [MemoryUsage]
+HKR\Software\Adobe\Photoshop\6.0 [ShowStatusWindow]
+
+[Adobe Photoshop 6.ForceSrcFile]
+Dir = %Photoshop6CommonColor%\Profiles\*
+Dir = %Photoshop6CommonColor%\Proofing\*
+Dir = %Photoshop6CommonColor%\Settings\*
+Dir = %Photoshop6PersonalSettings%\*
+Dir = %PhotoshopSuite6Path%\Presets\*
+
+[Adobe Photoshop 6.CopyFiles]
+Dir = %Photoshop6CommonColor%\Profiles\*
+Dir = %Photoshop6CommonColor%\Proofing\*
+Dir = %Photoshop6CommonColor%\Settings\*
+Dir = %Photoshop6PersonalSettings%\*
+Dir = %PhotoshopSuite6Path%\Presets\*
+
+[Adobe Photoshop 6.DelFiles]
+%Photoshop6CommonColor%\Profiles\CIERGB.icc
+%Photoshop6CommonColor%\Profiles\NTSC1953.icc
+%Photoshop6CommonColor%\Profiles\PAL_SECAM.icc
+%Photoshop6CommonColor%\Profiles\pcd4050e.icm
+%Photoshop6CommonColor%\Profiles\pcd4050k.icm
+%Photoshop6CommonColor%\Profiles\pcdcnycc.icm
+%Photoshop6CommonColor%\Profiles\pcdekycc.icm
+%Photoshop6CommonColor%\Profiles\pcdkoycc.icm
+%Photoshop6CommonColor%\Profiles\Photoshop4DefaultCMYK.icc
+%Photoshop6CommonColor%\Profiles\Photoshop5DefaultCMYK.icc
+%Photoshop6CommonColor%\Profiles\SMPTE-C.icc
+%Photoshop6CommonColor%\Profiles\stdpyccl.icm
+%Photoshop6CommonColor%\Profiles\WideGamutRGB.icc
+%Photoshop6CommonColor%\Profiles\Recommended\AdobeRGB1998.icc
+%Photoshop6CommonColor%\Profiles\Recommended\AppleRGB.icc
+%Photoshop6CommonColor%\Profiles\Recommended\ColorMatchRGB.icc
+%Photoshop6CommonColor%\Profiles\Recommended\EuroscaleCoated.icc
+%Photoshop6CommonColor%\Profiles\Recommended\EuroscaleUncoated.icc
+%Photoshop6CommonColor%\Profiles\Recommended\JapanStandard.icc
+%Photoshop6CommonColor%\Profiles\Recommended\sRGB Color Space Profile.icm
+%Photoshop6CommonColor%\Profiles\Recommended\USSheetfedCoated.icc
+%Photoshop6CommonColor%\Profiles\Recommended\USSheetfedUncoated.icc
+%Photoshop6CommonColor%\Profiles\Recommended\USWebCoatedSWOP.icc
+%Photoshop6CommonColor%\Profiles\Recommended\USWebUncoated.icc
+%Photoshop6CommonColor%\Settings\Color Management Off.csf
+%Photoshop6CommonColor%\Settings\Emulate Photoshop 4.csf
+%Photoshop6CommonColor%\Settings\Europe Prepress Defaults.csf
+%Photoshop6CommonColor%\Settings\Japan Prepress Defaults.csf
+%Photoshop6CommonColor%\Settings\Photoshop 5 Default Spaces.csf
+%Photoshop6CommonColor%\Settings\US Prepress Defaults.csf
+%Photoshop6CommonColor%\Settings\Web Graphics Defaults.csf
+%PhotoshopSuite6Path%\Presets\Optimized Colors\Black & White.act
+%PhotoshopSuite6Path%\Presets\Optimized Colors\Grayscale.act
+%PhotoshopSuite6Path%\Presets\Optimized Colors\Mac OS.act
+%PhotoshopSuite6Path%\Presets\Optimized Colors\Windows.act
+%PhotoshopSuite6Path%\Presets\Optimized Output Settings\Background Image.iros
+%PhotoshopSuite6Path%\Presets\Optimized Output Settings\Default Settings.iros
+%PhotoshopSuite6Path%\Presets\Optimized Output Settings\Include GoLive Code.iros
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF 128 Dithered.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF 128 No Dither.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF 32 Dithered.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF 32 No Dither.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF 64 Dithered.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF 64 No Dither.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\GIF Web Palette.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\JPEG High.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\JPEG Low.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\JPEG Medium.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\PNG-24.irs
+%PhotoshopSuite6Path%\Presets\Optimized Settings\PNG-8 128 Dithered.irs
+%PhotoshopSuite6Path%\Presets\Brushes\Assorted Brushes.abr
+%PhotoshopSuite6Path%\Presets\Brushes\Calligraphic Brushes.abr
+%PhotoshopSuite6Path%\Presets\Brushes\Drop Shadow Brushes.abr
+%PhotoshopSuite6Path%\Presets\Brushes\Faux Finish Brushes.abr
+%PhotoshopSuite6Path%\Presets\Brushes\Natural Brushes 2.abr
+%PhotoshopSuite6Path%\Presets\Brushes\Natural Brushes.abr
+%PhotoshopSuite6Path%\Presets\Brushes\Square Brushes.abr
+%PhotoshopSuite6Path%\Presets\Color Swatches\Mac OS.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\VisiBone Read Me.txt
+%PhotoshopSuite6Path%\Presets\Color Swatches\VisiBone.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\VisiBone2.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Web Hues.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Web Safe Colors.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Web Spectrum.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Windows.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\ANPA Colors.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\DIC Colors.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\FOCOLTONE Colors.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\Pantone Colors (Coated).aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\Pantone Colors (Process).aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\Pantone Colors (ProSim).aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\Pantone Colors (Uncoated).aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\TOYO Colors.aco
+%PhotoshopSuite6Path%\Presets\Color Swatches\Adobe Photoshop Only\TRUMATCH Colors.aco
+%PhotoshopSuite6Path%\Presets\Custom Shapes\Custom Shapes.csh
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\423-1.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\423-2.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\423-3.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\424 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\424 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\424 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\424 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 7 bl 1.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 7 bl 2.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 7 bl 3.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 7 bl 4.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 9 bl 1.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 9 bl 2.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 9 bl 3.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Cool Gray 9 bl 4.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 11 bl 1.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 11 bl 2.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 11 bl 3.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 11 bl 4.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 8 bl 1.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 8 bl 2.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 8 bl 3.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Gray-Black Duotones\Warm Gray 8 bl 4.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\144 orange (25%) bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\144 orange (25%) bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\144 orange (25%) bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\144 orange (25%) bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\144 orange bl 80% shad.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\159 dk orange bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\159 dk orange bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\159 dk orange bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\159 dk orange bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\327 aqua (50%) bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\327 aqua (50%) bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\327 aqua (50%) bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\327 aqua (50%) bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\478 brown (100%) bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\478 brown (100%) bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\478 brown (100%) bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\478 brown (100%) bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\506 burgundy (75%) bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\506 burgundy (75%) bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\506 burgundy (75%) bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\506 burgundy (75%) bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\527 purple (100%) bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\527 purple (100%) bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\527 purple (100%) bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\527 purple (100%) bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 072 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 072 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 072 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 072 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 286 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 286 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 286 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\blue 286 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\brown 464 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\brown 464 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\brown 464 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\brown 464 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 3405 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 3405 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 3405 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 3405 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 349 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 349 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 349 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\green 349 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\mauve 4655 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\mauve 4655 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\mauve 4655 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\mauve 4655 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\red 485 bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\red 485 bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\red 485 bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\PANTONE(R) Duotones\red 485 bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\cyan bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\cyan bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\cyan bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\cyan bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\magenta bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\magenta bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\magenta bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\magenta bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\yellow bl 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\yellow bl 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\yellow bl 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Duotones\Process Duotones\yellow bl 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Gray Quadtones\Bl CG10 CG4 WmG3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Gray Quadtones\Bl CG10 WmG3 CG1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Gray Quadtones\Bl CG10 WmG4 CG3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Gray Quadtones\Bl WmG9 CG6 CG3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\PANTONE(R) Quadtones\Bl 430 493 557.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\PANTONE(R) Quadtones\Bl 431 492 556.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\PANTONE(R) Quadtones\Bl 541 513 5773.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\PANTONE(R) Quadtones\Bl 75% 50% 25%.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Process Quadtones\CMYK blue.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Process Quadtones\CMYK brown.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Process Quadtones\CMYK cool.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Process Quadtones\CMYK ext wm.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Process Quadtones\CMYK neutral.ado
+%PhotoshopSuite6Path%\Presets\Duotones\Quadtones\Process Quadtones\CMYK wm.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\Bl 404 WmGray 401 WmGray.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\Bl 409 WmGray 407 WmGray.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\Bl Cool Gray 10 WmGray 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\Bl WmGray 7 WmGray 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\CG9CG2-1.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\CG9CG2-2.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\CG9CG2-3.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Gray Tritones\CG9CG2-4.ADO
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 165 red orange 457 brown.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 172 orange 423 gray.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 313 aqua 127 gold.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 334 green 437 mauve.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 340 green 423 gray.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 437 burgundy 127 gold.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\PANTONE(R) Tritones\Bl 50% 25%.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BCY green 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BCY green 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BCY green 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BCY green 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMC blue 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMC blue 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMC blue 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMC blue 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY brown 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY brown 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY brown 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY brown 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY red 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY red 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY red 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY red 4.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY sepia 1.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY sepia 2.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY sepia 3.ado
+%PhotoshopSuite6Path%\Presets\Duotones\TRITONE\Process Tritones\BMY sepia 4.ado
+%PhotoshopSuite6Path%\Presets\Gradients\Color Harmonies 1.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Color Harmonies 2.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Metals.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Noise Samples.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Pastels.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Simple.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Special Effects.grd
+%PhotoshopSuite6Path%\Presets\Gradients\Spectrums.grd
+%PhotoshopSuite6Path%\Presets\Layouts\EightByTen.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndSmaller.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndThreeByFive.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndThreeByThreeH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndThreeH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndTwoByTwoH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndTwoH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevenAndTwoHByThreeH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FiveBySevens.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FourByFives.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FourByFivesAndSmaller.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FourByFivesAndTwoByTwoH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\FourByFivesAndTwoHByThreeH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\ReadMe.txt
+%PhotoshopSuite6Path%\Presets\Layouts\TenByThirteen.txt
+%PhotoshopSuite6Path%\Presets\Layouts\ThreeHByFive.txt
+%PhotoshopSuite6Path%\Presets\Layouts\TwoByTwo.txt
+%PhotoshopSuite6Path%\Presets\Layouts\TwoByTwoH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\TwoHByThreeH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\TwoHByThreeHAndTwoByTwoH.txt
+%PhotoshopSuite6Path%\Presets\Layouts\TwoHByThreeQ.txt
+%PhotoshopSuite6Path%\Presets\Patterns\Patterns 2.pat
+%PhotoshopSuite6Path%\Presets\Patterns\Patterns.pat
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Bubbles.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Carpet.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Coarse Weave.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Crystals.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Denim.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Purples.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Rough.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Slate.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Stone.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Streaks.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Stucco.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Water.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Wood.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Woven.psd
+%PhotoshopSuite6Path%\Presets\Patterns\Adobe ImageReady Only\Zebra.psd
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\60's flowers.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Arrowheads.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Blossoms.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Borneo.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Deco.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Diamonds-cubes.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Drunkard's path.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Flowers 1.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Flowers 2.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Fractures.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Herringbone 1.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Herringbone 2.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\India.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Intricate surface.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Laguna.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Mali primitive.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Mayan bricks.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Mexican tile.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Mezzotint-shape.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Optical checkerboard.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Optical Squares.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Oriental fans.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Oriental flowers.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Pinwheel.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Plaid.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Quilt.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Random V's.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Rough diamonds.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Scales.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Scallops.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Snake diamonds.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Spiked.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Submerged stones.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Triangles grid.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Undulating lines gradation.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Waffle Illusion.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Waffle.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Water droplets.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Waves.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Weave-Y.ai
+%PhotoshopSuite6Path%\Presets\Patterns\PostScript Patterns\Wrinkle.ai
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Actions.pdf
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Commands.atn
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Frames.atn
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Image Effects.atn
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Production.atn
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Text Effects.atn
+%PhotoshopSuite6Path%\Presets\Photoshop Actions\Textures.atn
+%PhotoshopSuite6Path%\Presets\Contours\Contours.shc
+%PhotoshopSuite6Path%\Presets\Styles\Buttons.asl
+%PhotoshopSuite6Path%\Presets\Styles\Glass Button Rollovers.asl
+%PhotoshopSuite6Path%\Presets\Styles\Glass Buttons.asl
+%PhotoshopSuite6Path%\Presets\Styles\Image Effects.asl
+%PhotoshopSuite6Path%\Presets\Styles\Text Effects.asl
+%PhotoshopSuite6Path%\Presets\Styles\Textures.asl
+%PhotoshopSuite6Path%\Presets\Textures\Feathers.psd
+%PhotoshopSuite6Path%\Presets\Textures\Footprints.psd
+%PhotoshopSuite6Path%\Presets\Textures\Frosted Glass.psd
+%PhotoshopSuite6Path%\Presets\Textures\Lines.psd
+%PhotoshopSuite6Path%\Presets\Textures\Mountains 1.psd
+%PhotoshopSuite6Path%\Presets\Textures\Puzzle.psd
+%PhotoshopSuite6Path%\Presets\Textures\Rust Flakes.psd
+%PhotoshopSuite6Path%\Presets\Textures\Snake Skin.psd
+%PhotoshopSuite6Path%\Presets\Textures\Strands 1.psd
+%PhotoshopSuite6Path%\Presets\Textures\Stucco 2.psd
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Horizontal Frame\Caption.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Horizontal Frame\FrameSet.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Horizontal Frame\indexPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Horizontal Frame\SubPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Horizontal Frame\Thumbnail.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Simple\Caption.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Simple\IndexPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Simple\SubPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Simple\Thumbnail.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\Caption.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\IndexPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\SubPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\Thumbnail.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\images\background.jpg
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\images\home.gif
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\images\next.gif
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Table\images\previous.gif
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Vertical Frame\Caption.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Vertical Frame\FrameSet.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Vertical Frame\indexPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Vertical Frame\SubPage.htm
+%PhotoshopSuite6Path%\Presets\WebContactSheet\Vertical Frame\Thumbnail.htm
+
+[Adobe ImageReady 3.Detect]
+Registry, HKR\Software\Adobe\ImageReady 3.0, EXISTS
+File, %PhotoshopSuite6Path%\ImageReady.exe, VERSION("ProductVersion","* 3.*")
+
+[Adobe ImageReady 3.Instructions]
+AddReg = Adobe ImageReady 3.AddReg
+DelReg = Adobe ImageReady 3.DelReg
+
+[Adobe ImageReady 3.AddReg]
+HKR\Software\Adobe\ImageReady 3.0\Preferences\*
+
+[Adobe ImageReady 3.DelReg]
+HKR\Software\Adobe\ImageReady 3.0\Preferences\PluginCache\*
+HKR\Software\Adobe\ImageReady 3.0\Preferences\RecentFiles\*
+
+
+
+
+
+[MSN Explorer 10.Environment]
+MSNExplorer1InstPath = Registry, %HklmWowSoftware%\Microsoft\MSN6\Setup\MSN [InstallDir]
+
+[MSN Explorer 10.Detect.1]
+Registry, HKR\Software\Microsoft\MSN6, EXISTS
+Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Uninstall\MSNMS, EXISTS
+
+[MSN Explorer 10.Detect.2]
+Registry, HKR\Software\Microsoft\MSN6, EXISTS
+Registry, %HklmWowSoftware%\Microsoft\MSN6, EXISTS
+
+[MSN Explorer 10.Instructions]
+ForceSrcFile = MSN Explorer 10.ForceSrcFile
+CopyFilesEx = MSN Explorer 10.CopyFilesEx
+AddReg = MSN Explorer 10.AddReg
+
+[MSN Explorer 10.ForceSrcFile]
+dir=%CSIDL_APPDATA%\MSN6\UserData\*
+
+[MSN Explorer 10.CopyFilesEx]
+dir=%CSIDL_APPDATA%\MSN6\UserData\*,%CSIDL_APPDATA%\MSN6\UserData
+
+[MSN Explorer 10.AddReg]
+HKR\Software\Microsoft\MSN6 [RunCount]
+HKR\Software\Microsoft\MSN6\Access\*
+HKR\Software\Microsoft\MSN6\Frame\*
+HKR\Software\Microsoft\MSN6\LogonManager\Connectors\*
+HKR\Software\Microsoft\MSN6\Signup\*
+HKR\Software\Microsoft\MSN6\Users\*
+
+
+
+[MS Netmeeting 3.Environment]
+NetmeetingInstPath = Registry, %HklmWowSoftware%\Microsoft\Conferencing [InstallationDirectory]
+
+[MS Netmeeting 3.Detect]
+Registry, HKR\Software\Microsoft\Conferencing, EXISTS
+File, %NetmeetingInstPath%\conf.exe, VERSION("ProductVersion","3.*")
+
+[MS Netmeeting 3.Instructions]
+DestDelReg = MS Netmeeting 3.DestDelReg
+AddReg = MS Netmeeting 3.AddReg
+DelReg = MS Netmeeting 3.DelReg
+
+[MS Netmeeting 3.DestDelReg]
+HKR\Software\Microsoft\Conferencing [AutoAccept]
+HKR\Software\Microsoft\Conferencing [CallingMethod]
+HKR\Software\Microsoft\Conferencing [DontUseULS]
+HKR\Software\Microsoft\Conferencing [Enable H.323 Gateway]
+HKR\Software\Microsoft\Conferencing [Gatekeeper]
+HKR\Software\Microsoft\Conferencing [GatekeeperAddressing]
+HKR\Software\Microsoft\Conferencing [H.323 Gateway]
+HKR\Software\Microsoft\Conferencing [PreferSecureOutgoingCalls]
+HKR\Software\Microsoft\Conferencing [RequireSecureIncomingCalls]
+HKR\Software\Microsoft\Conferencing [Run Always]
+HKR\Software\Microsoft\Conferencing [SecureAuthentication]
+HKR\Software\Microsoft\Conferencing\Chat\*
+HKR\Software\Microsoft\Conferencing\File Transfer [WindowHeight]
+HKR\Software\Microsoft\Conferencing\File Transfer [WindowWidth]
+HKR\Software\Microsoft\Conferencing\File Transfer [WindowX]
+HKR\Software\Microsoft\Conferencing\File Transfer [WindowY]
+HKR\Software\Microsoft\Conferencing\UI\*
+HKR\Software\Microsoft\Conferencing\Video Control\Local\*
+HKR\Software\Microsoft\Conferencing\Video Control\Remote\*
+HKR\Software\Microsoft\Conferencing\White Board 3.0\*
+HKR\Software\Microsoft\User Location Service\Client\*
+HKR\Software\Microsoft\Conferencing\Audio Control [Auto Gain Control]
+HKR\Software\Microsoft\Conferencing\Audio Control [Auto Mix]
+HKR\Software\Microsoft\Conferencing\Audio Control [Automatic Mic Sensitivity]
+HKR\Software\Microsoft\Conferencing\Audio Control [Calibrated Volume]
+HKR\Software\Microsoft\Conferencing\Audio Control [Codec Choice]
+HKR\Software\Microsoft\Conferencing\Audio Control [Direct Sound]
+HKR\Software\Microsoft\Conferencing\Audio Control [Full Duplex]
+HKR\Software\Microsoft\Conferencing\Audio Control [Last Calibrated Volume]
+HKR\Software\Microsoft\Conferencing\Audio Control [Microphone Sensitivity]
+HKR\Software\Microsoft\Conferencing\Audio Control [RecordMute]
+HKR\Software\Microsoft\Conferencing\Audio Control [Speaker Volume]
+HKR\Software\Microsoft\Conferencing\Audio Control [SpeakerMute]
+HKR\Software\Microsoft\Conferencing\Audio Control [Typical BandWidth]
+
+[MS Netmeeting 3.AddReg]
+HKR\Software\Microsoft\Conferencing
+HKR\Software\Microsoft\Conferencing\Audio Control\*
+HKR\Software\Microsoft\Conferencing\Chat\*
+HKR\Software\Microsoft\Conferencing\File Transfer\*
+HKR\Software\Microsoft\Conferencing\UI\*
+HKR\Software\Microsoft\Conferencing\Video Control\Local\*
+HKR\Software\Microsoft\Conferencing\Video Control\Remote\*
+HKR\Software\Microsoft\Conferencing\White Board 3.0\*
+HKR\Software\Microsoft\User Location Service\Client\*
+
+[MS Netmeeting 3.DelReg]
+HKR\Software\Microsoft\Conferencing\File Transfer [Receive Directory]
+HKR\Software\Microsoft\Conferencing [WizardUI]
+HKR\Software\Microsoft\Conferencing\Audio Control [WaveIn Device ID]
+HKR\Software\Microsoft\Conferencing\Audio Control [WaveIn Device Name]
+HKR\Software\Microsoft\Conferencing\Audio Control [WaveOut Device ID]
+HKR\Software\Microsoft\Conferencing\Audio Control [WaveOut Device Name]
+HKR\Software\Microsoft\Conferencing\Audio Control [WaveIn Device ID]
+HKR\Software\Microsoft\Conferencing\Audio Control [Sound Card Capabilities]
+
+
+
+[MS Messenger 36.Environment]
+MSMessenger36InstPath = Registry, %HklmWowSoftware%\Microsoft\MessengerService [InstallationDirectory]
+
+[MS Messenger 36.Detect]
+Registry, HKR\Software\Microsoft\MessengerService, EXISTS
+Registry, %HklmWowSoftware%\Microsoft\Active Setup\Installed Components\{5945c046-1e7d-11d1-bc44-00c04fd912be}, EXISTS
+Registry, %HklmWowSoftware%\Microsoft\MSNMessenger [InstallationDirectory], !EXISTS
+
+[MS Messenger 36.Instructions]
+DestDelReg = MS Messenger 36.DestDelReg
+AddReg = MS Messenger 36.AddReg
+DelReg = MS Messenger 36.DelReg
+
+[MS Messenger 36.DestDelReg]
+HKR\Software\Microsoft\MessengerService [AppSettings]
+HKR\Software\Microsoft\MessengerService [EnableIdleDetect]
+HKR\Software\Microsoft\MessengerService [FtReceiveFolder]
+HKR\Software\Microsoft\MessengerService [IM Color]
+HKR\Software\Microsoft\MessengerService [IM Format]
+HKR\Software\Microsoft\MessengerService [ShowEmoticons]
+HKR\Software\Microsoft\MessengerService\PhoneMRU\*
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [MSMSGS]
+
+[MS Messenger 36.AddReg]
+HKR\Software\Microsoft\MessengerService
+HKR\Software\Microsoft\MessengerService\PhoneMRU\*
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [MSMSGS]
+
+[MS Messenger 36.DelReg]
+HKR\Software\Microsoft\MessengerService [FtReceiveFolder]
+
+
+
+[MS Money 2001.Environment]
+MSMoney2001InstPath = Registry, %HklmWowSoftware%\Microsoft\Money\9.0 [MoneyPath]
+MSMoney2001SysPath = Registry, %HklmWowSoftware%\Microsoft\Money\9.0 [MoneySystem]
+
+[MS Money 2001.Detect]
+Registry, HKR\Software\Microsoft\Money\9.0, EXISTS
+Registry, %HklmWowSoftware%\Microsoft\Money\9.0 [ExePath], VERSION("ProductVersion","9.*")
+
+[MS Money 2001.Instructions]
+DestDelReg = MS Money 2001.DestDelReg
+AddReg = MS Money 2001.AddReg
+DelReg = MS Money 2001.DelReg
+
+[MS Money 2001.DestDelReg]
+HKR\Software\Microsoft\Money\9.0 [ChFont]
+HKR\Software\Microsoft\Money\9.0 [ConnectionProgressShowDetails]
+HKR\Software\Microsoft\Money\9.0 [FeedbackPaneState]
+HKR\Software\Microsoft\Money\9.0 [Fractions]
+HKR\Software\Microsoft\Money\9.0 [FRDialogPos]
+HKR\Software\Microsoft\Money\9.0 [HideNews]
+HKR\Software\Microsoft\Money\9.0 [IsUpdatePrice]
+HKR\Software\Microsoft\Money\9.0 [NewsHour]
+HKR\Software\Microsoft\Money\9.0 [OnlineAOLUser]
+HKR\Software\Microsoft\Money\9.0 [OnlineConnectionConfigured]
+HKR\Software\Microsoft\Money\9.0 [OnlineLeaveConnectOpen]
+HKR\Software\Microsoft\Money\9.0 [OnlineMCSyncOnShutdown]
+HKR\Software\Microsoft\Money\9.0 [OnlineNoUpdateOnStartup]
+HKR\Software\Microsoft\Money\9.0 [PayBillsDlgSizer]
+HKR\Software\Microsoft\Money\9.0 [PayBillsSizer]
+HKR\Software\Microsoft\Money\9.0 [PlaceRestoreData]
+HKR\Software\Microsoft\Money\9.0 [PlaceRestoreDataFileChecksum]
+HKR\Software\Microsoft\Money\9.0 [PlaceRestoreDataSize]
+HKR\Software\Microsoft\Money\9.0 [SetupModelSizer]
+HKR\Software\Microsoft\Money\9.0 [ShowGrandTotal]
+HKR\Software\Microsoft\Money\9.0 [ShowSoldSecurity]
+HKR\Software\Microsoft\Money\9.0 [ShowStatus]
+HKR\Software\Microsoft\Money\9.0 [ShowSubTotal]
+HKR\Software\Microsoft\Money\9.0 [ShowWatch]
+HKR\Software\Microsoft\Money\9.0 [UpdatePrice]
+HKR\Software\Microsoft\Money\9.0\AVHelp\*
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [MoneyAgent]
+
+[MS Money 2001.AddReg]
+HKR\Software\Microsoft\Money\9.0
+HKR\Software\Microsoft\Money\9.0\AVHelp\*
+HKR\Software\Microsoft\Money\9.0\MoneyAgent\*
+HKR\Software\Microsoft\Money\9.0\Msi\*
+HKR\Software\Microsoft\Money\9.0\Places\*
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [MoneyAgent]
+
+[MS Money 2001.DelReg]
+HKR\Software\Microsoft\Money\9.0 [Calculator]
+HKR\Software\Microsoft\Money\9.0 [LastQuickenFile]
+HKR\Software\Microsoft\Money\9.0 [MruFile0]
+HKR\Software\Microsoft\Money\9.0 [MruFile1]
+HKR\Software\Microsoft\Money\9.0 [MruFile2]
+HKR\Software\Microsoft\Money\9.0 [MruFile3]
+
+
+
+
+
+[MS Movie Maker 1.Environment]
+MSMMCmdLine = Registry, %HklmWowSoftware%\Classes\Windows.Movie.Maker\DefaultIcon []
+MSMMInstPath = Directory, %MSMMCmdLine%\..
+
+[MS Movie Maker 1.Detect]
+Registry, HKR\Software\Microsoft\MovieMaker, EXISTS
+File, %MSMMInstPath%\MOVIEMK.EXE, VERSION("ProductVersion","1.*")
+
+[MS Movie Maker 1.Instructions]
+DestDelReg = MS Movie Maker 1.DestDelReg
+AddReg = MS Movie Maker 1.AddReg
+
+[MS Movie Maker 1.DestDelReg]
+HKR\Software\Microsoft\MovieMaker [AutoRecord]
+HKR\Software\Microsoft\MovieMaker [Create Clips]
+HKR\Software\Microsoft\MovieMaker [Director Name]
+HKR\Software\Microsoft\MovieMaker [Still Duration]
+HKR\Software\Microsoft\MovieMaker [TourDone]
+
+[MS Movie Maker 1.AddReg]
+HKR\Software\Microsoft\MovieMaker [AutoRecord]
+HKR\Software\Microsoft\MovieMaker [Create Clips]
+HKR\Software\Microsoft\MovieMaker [Director Name]
+HKR\Software\Microsoft\MovieMaker [Still Duration]
+HKR\Software\Microsoft\MovieMaker [TourDone]
+HKR\Software\Microsoft\MovieMaker\Main Window Settings\*
+
+
+
+
+[CuteFTP 4.Detect]
+Registry, %HklmWowSoftware%\GlobalSCAPE Inc.\CuteFTP [CmdLine], VERSION("ProductVersion","4.*")
+
+[CuteFTP 4.Instructions]
+DestDelReg = CuteFTP 4.DestDelReg
+AddReg = CuteFTP 4.AddReg
+DelReg = CuteFTP 4.DelReg
+RegFile = CuteFTP 4.RegFile
+ProcessSection = CuteFTP 4.MoveFiles
+
+[CuteFTP 4.DestDelReg]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0 [CustomProxyCommands]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0 [LastHost]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0 [QConHist]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\Tip [StartUp]
+
+[CuteFTP 4.AddReg]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0 [CustomProxyCommands]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0 [LastHost]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0 [QConHist]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\Browser Integration\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP-v1-Bar0\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP-v1-Bar1\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP-v1-Bar2\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP-v1-Bar3\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP-v1-Summary\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\Settings\*
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\Tip [StartUp]
+
+[CuteFTP 4.DelReg]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP [DLPath]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP [HTMLEditor]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP [LogDirName]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\CuteFTP [Viewer]
+
+[CuteFTP 4.RegFile]
+HKR\Software\GlobalSCAPE\CuteFTP 4.0\Sounds\*
+
+[CuteFTP 4.MoveFiles.Environment]
+CuteFTP4CmdLine = Registry, %HklmWowSoftware%\GlobalSCAPE Inc.\CuteFTP [CmdLine]
+CuteFTP4InstPath = Directory, %CuteFTP4CmdLine%\..
+
+[CuteFTP 4.MoveFiles.9X]
+ForceSrcFile = CuteFTP 4.ForceSrcFile.9X
+CopyFilesEx = CuteFTP 4.CopyFilesEx.9X
+
+[CuteFTP 4.ForceSrcFile.9X]
+dir=%CuteFTP4InstPath%\*
+
+[CuteFTP 4.CopyFilesEx.9X]
+%CuteFTP4InstPath%\autoname.dat,%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP
+%CuteFTP4InstPath%\commands.dat,%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP
+%CuteFTP4InstPath%\sm.dat,%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP
+%CuteFTP4InstPath%\wizdata.dat,%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP
+
+[CuteFTP 4.MoveFiles.NT]
+ForceSrcFile = CuteFTP 4.ForceSrcFile.NT
+CopyFiles = CuteFTP 4.CopyFiles.NT
+
+[CuteFTP 4.ForceSrcFile.NT]
+dir=%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP\*
+
+[CuteFTP 4.CopyFiles.NT]
+%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP\autoname.dat,%CSIDL_APPDATA%
+%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP\commands.dat,%CSIDL_APPDATA%
+%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP\sm.dat,%CSIDL_APPDATA%
+%CSIDL_APPDATA%\GlobalSCAPE\CuteFTP\wizdata.dat,%CSIDL_APPDATA%
+
+
+
+[AIM.Environment]
+AIMExe = Registry, HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\AppPath []
+AIMPath = Directory, %AIMExe%\..
+
+[AIM.Detect]
+Registry, %HklmWowSoftware%\America Online\AOL Instant Messenger (SM), EXISTS
+Registry, HKR\Software\America Online\AOL Instant Messenger (TM), EXISTS
+Registry, HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\AppPath [], VERSION("ProductVersion","4.3*")
+
+[AIM.Instructions]
+addreg=AIM Addreg
+regfileex=AIM RegfileEx
+delreg=AIM Delreg
+destdelreg=AIM DestDelReg
+copyfiles=AIM CopyfilesEX
+forcesrcfile=AIM ForceSrcFile
+
+[AIM Addreg]
+HKR\Software\America Online\AOL Instant Messenger (TM)\*
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [AIM]
+
+[AIM RegfileEx]
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\Users\*, *Sound,,,%AIMPath%\Sounds
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\Users\*, *SndName,,,%AIMPath%\Sounds
+
+[AIM Delreg]
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\AppPath\*
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\AutoUpgrade\*
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\Users\* [LastNewsFile]
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\Users\* [LastStockFile]
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\Users\* [DirDownload]
+HKR\Software\America Online\AOL Instant Messenger (TM)\CurrentVersion\Users\* [DirFileLib]
+
+[AIM DestDelReg]
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [AIM]
+
+[AIM CopyFilesEx]
+%WINDIR%\aim95\*\info.htm
+%WINDIR%\aim95\*\picture\*
+
+
+[AIM ForceSrcFile]
+Dir=%WINDIR%\aim95\*
+
+
+
+[ICQ.Environment]
+ICQPath = Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [ICQPath]
+ICQDbPath = Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [Database]
+ICQDbNewPath = Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [New Database]
+ICQDb2000aPath = Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [2000a Database]
+ICQDb2000bPath = Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [2000b Database]
+ICQUinPath = Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [UIN Dir]
+
+[ICQ.Detect]
+Registry, %HklmWowSoftware%\Mirabilis\ICQ, EXISTS
+Registry, HKR\Software\Mirabilis\ICQ\DefaultPrefs [New Database], EXISTS
+
+[ICQ.Instructions]
+addreg=ICQ Addreg
+delregex=ICQ DelregEx
+regfileex=ICQ RegfileEx
+destdelreg=ICQ Destdelreg
+ForceSrcFile=ICQ ForceSrcFile
+copyfiles=ICQ Copyfiles
+
+[ICQ Addreg]
+HKR\Software\Mirabilis\ICQ\Owners\*
+HKR\Software\Mirabilis\ICQ\Agent\Apps [Launch Browser]
+HKR\Software\Mirabilis\ICQ\ICQphone\*
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [Mirabilis ICQ]
+HKR\Software\Net2Phone\ICQ\Config\*
+
+[ICQ DelregEx]
+HKR\Software\Mirabilis\ICQ\Owners\*\Prefs\Externals
+HKR\Software\Mirabilis\ICQ\Owners\*\Prefs\Externals\*
+
+[ICQ Destdelreg]
+HKR\Software\Microsoft\Windows\CurrentVersion\Run [Mirabilis ICQ]
+HKR\Software\Net2Phone\ICQ\Config\*
+
+[ICQ RegfileEx]
+HKR\Software\Mirabilis\ICQ\Owners\*\Prefs\Sounds
+
+[ICQ ForceSrcFile]
+Dir=%ICQDbPath%\*
+Dir=%ICQDbNewPath%\*
+Dir=%ICQDb2000aPath%\*
+Dir=%ICQDb2000bPath%\*
+Dir=%ICQUinPath%\*
+Dir=%ICQPath%\Plugins\Info\*
+%ICQPath%\Plugins\Email.dat
+%ICQPath%\Plugins\Email.idx
+
+[ICQ Copyfiles]
+Dir=%ICQDbPath%\*
+Dir=%ICQDbNewPath%\*
+Dir=%ICQDb2000aPath%\*
+Dir=%ICQDb2000bPath%\*
+Dir=%ICQUinPath%\*
+DIR=%ICQPath%\Plugins\Info\*
+%ICQPath%\Plugins\Email.dat
+%ICQPath%\Plugins\Email.idx
+
+
+
+[GameVoice 1.Environment]
+GVProfile=Registry, HKR\Software\Microsoft\GameVoice\Settings [ProfilePath]
+GVProfilePath=Directory, %GVProfile%\..
+GVSharePath=Registry, %HklmWowSoftware%\Microsoft\GVShare [InstallDir]
+GV10InstlInfo=Registry, HKR\Software\Microsoft\GameVoice [InstallInfo]
+GV10Path=Directory, %GV10InstlInfo%\...
+GV11Path=Registry, %HklmWowSoftware%\Microsoft\GameVoice\WebUpdate [InstallDir]
+
+[GameVoice 1.Detect.1]
+Registry, HKR\Software\Microsoft\GameVoice, EXISTS
+File, %GVSharePath%\GVShare.exe, VERSION("ProductVersion","1.*")
+
+[Gamevoice 1.Detect.2]
+Registry, HKR\Software\Microsoft\GameVoice, EXISTS
+File, %GV10Path%\GameVoice.exe, VERSION("ProductVersion","0.1.*")
+
+[Gamevoice 1.Detect.3]
+Registry, HKR\Software\Microsoft\GameVoice, EXISTS
+File, %GV11Path%\GameVoice.exe, VERSION("ProductVersion","1.*")
+
+[GameVoice 1.Instructions]
+addreg=GameVoice Addreg
+delreg=GameVoice Delreg
+copyfilesex=GameVoice CopyFilesEx
+forcedestfile=GameVoice ForceDestFile
+
+[GameVoice Addreg]
+HKR\Software\Microsoft\GameVoice\*
+
+[GameVoice Delreg]
+HKR\Software\Microsoft\GameVoice\Settings [ProfilePath]
+HKR\Software\Microsoft\GameVoice\Settings [RecDev]
+HKR\Software\Microsoft\GameVoice\Settings [SpkDev]
+HKR\Software\Microsoft\GameVoice\Settings\C2\*
+HKR\Software\Microsoft\GameVoice\Settings\Profiles\*
+
+[GameVoice CopyFilesEx]
+dir=%GVProfilePath%,%GVProfilePath%
+
+[GameVoice ForceDestFile]
+%GVProfilePath%\*
+
+
+
+
+[RogerWilco.Environment]
+RogerWilcoInstPath = Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\App Paths\roger.exe [Path]
+
+[RogerWilco.Detect]
+Registry, HKR\Software\Resounding\Roger Wilco, EXISTS
+Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Uninstall\Roger Wilco, EXISTS
+
+[RogerWilco.Instructions]
+addreg=RogerWilco Addreg
+destdelreg=RogerWilco DestDelReg
+
+[RogerWilco Addreg]
+HKR\Software\Resounding\Roger Wilco [callsign]
+HKR\Software\Resounding\Roger Wilco [key]
+HKR\Software\Resounding\Roger Wilco [vox]
+HKR\Software\Resounding\Roger Wilco [wav]
+HKR\Software\Resounding\Roger Wilco [automikeselect]
+HKR\Software\Resounding\Roger Wilco [mic_click]
+HKR\Software\Resounding\Roger Wilco [udp_port]
+HKR\Software\Resounding\Roger Wilco [hi_priority]
+
+[RogerWilco DestDelReg]
+HKR\Software\Resounding\Roger Wilco [key]
+
+
+
+
+[BattleCom.Environment]
+BCSoundsPath=Registry, %HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [SoundsPath]
+
+[BattleCom.Detect]
+Registry, %HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3, EXISTS
+
+[BattleCom.Instructions]
+addreg=BattleCom Addreg
+addregex=BattleCom AddregEx
+regfileex=BattleCom RegFileEx
+
+[BattleCom Addreg]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [VPE]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [TransportType]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [GameLink]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [DebugLevel]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [ThreadPriority]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [RDS]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [BasePriority]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [UsePriority]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [RecordLockCheck]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [ShowPeerHelp]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [ASO]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [MicForce]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [EnableEmulated]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [ShowSplash]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [SkipValid]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [BufAggressiveness]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [BufSensitivity]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3 [PTT]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3\PlayerHistory\*
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3\ServerHistory\*
+
+[BattleCom AddregEx]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3, *HK
+
+[BattleCom RegFileEx]
+%HklmWowSoftware%\ShadowFactor Software Inc.\BattleCom Client\1.3\Sounds\*, *,,,%BCSoundsPath%
+
+
+[GoZilla.Environment]
+GoZillaPath = Registry, HKR\SOFTWARE\Go!Zilla\Version [work_dir]
+
+[GoZilla.Detect]
+Registry, HKR\SOFTWARE\Go!Zilla\Version [Module Name],  VERSION("ProductVersion","3,*")
+Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Uninstall\Go!Zilla [UninstallString], EXISTS
+
+[GoZilla.Instructions]
+DestDelReg = GoZilla.DestDelReg
+AddReg = GoZilla.AddReg
+DelReg = GoZilla.DelReg
+RegFile = GoZilla.RegFile
+CopyFilesEx = GoZilla.CopyFilesEx
+ForceSrcFile = GoZilla.ForceSrcFile
+
+[GoZilla.DestDelReg]
+HKR\SOFTWARE\Go!Zilla\CookieControl\*
+HKR\SOFTWARE\Go!Zilla\Dialogs\*
+HKR\SOFTWARE\Go!Zilla\FileIds\*
+HKR\SOFTWARE\Go!Zilla\Window\*
+HKR\SOFTWARE\Go!Zilla\Window Style\*
+
+[GoZilla.Addreg]
+HKR\SOFTWARE\Go!Zilla\AutoDUN\*
+HKR\SOFTWARE\Go!Zilla\Automation\*
+HKR\SOFTWARE\Go!Zilla\Connection\*
+HKR\SOFTWARE\Go!Zilla\CookieControl\*
+HKR\SOFTWARE\Go!Zilla\Dialogs\*
+HKR\SOFTWARE\Go!Zilla\File Launch\*
+HKR\SOFTWARE\Go!Zilla\FileIds\*
+HKR\SOFTWARE\Go!Zilla\Files\*
+HKR\SOFTWARE\Go!Zilla\FTPSearch\*
+HKR\SOFTWARE\Go!Zilla\Graph\*
+HKR\SOFTWARE\Go!Zilla\Monster Update\*
+HKR\SOFTWARE\Go!Zilla\Tip\*
+HKR\SOFTWARE\Go!Zilla\Window\*
+HKR\SOFTWARE\Go!Zilla\Window Style\*
+HKR\SOFTWARE\Go!Zilla\ZipZilla\*
+
+[GoZilla.DelReg]
+HKR\SOFTWARE\Go!Zilla\Version\*
+HKR\SOFTWARE\Go!Zilla\ZipZilla\Paths\*
+
+
+[GoZilla.RegFile]
+HKR\SOFTWARE\Go!Zilla\Files [filelist name]
+
+[GoZilla.CopyFilesEx]
+%GoZillaPath%\monitor.dat, %GoZillaPath%
+%GoZillaPath%\channel.dat, %GoZillaPath%
+%GoZillaPath%\site.dat, %GoZillaPath%
+%GoZillaPath%\auth.dat, %GoZillaPath%
+
+[GoZilla.ForceSrcFile]
+%GoZillaPath%\monitor.dat
+%GoZillaPath%\channel.dat
+%GoZillaPath%\site.dat
+%GoZillaPath%\auth.dat
+
+
+
+[GetRight 4.Environment]
+GetRightInstPath = Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\App Paths\getright.exe [Path]
+
+[GetRight 4.Detect]
+File, %GetRightInstPath%\getright.exe, VERSION("ProductVersion","4.*")
+
+[GetRight 4.Instructions]
+ProcessSection = GetRight 4.MoveFiles
+AddReg = GetRight 4.AddReg
+DelReg = GetRight 4.DelReg
+DestDelReg = GetRight 4.DestDelReg
+RegFile = GetRight 4.RegFile
+
+[GetRight 4.AddReg]
+%HklmWowSoftware%\Headlight\GetRight\Config\*
+HKR\Software\Headlight\GetRight\BrowseWindow\*
+HKR\Software\Headlight\GetRight\ResumeWindow\*
+HKR\Software\Headlight\GetRight\DropWindow\*
+HKR\Software\Headlight\GetRight\Config\*
+HKR\Software\Headlight\GetRight\ConfigLogin\*
+HKR\Software\Headlight\GetRight\ConfigSnd\*
+HKR\Software\Headlight\GetRight\Favorites\*
+HKR\Software\Headlight\GetRight\RecentServers\*
+HKR\Software\Headlight\GetRight\TypedURLs\*
+HKR\Software\Headlight\GetRight\Toolbar\*
+HKR\Software\Headlight\GetRight\Stats\*
+HKR\Software\Headlight\GetRight\Settings\*
+HKR\Software\Headlight\GetRight\Daily\*
+HKR\Software\Headlight\GetRight\DailyFiles\*
+HKR\Software\Headlight\GetRight\DailyURLs\*
+
+[GetRight 4.DelReg]
+HKR\Software\Headlight\GetRight\Config [DefaultDir]
+HKR\Software\Headlight\GetRight\Config [DirWPProcess]
+HKR\Software\Headlight\GetRight\Config [InstallDir]
+HKR\Software\Headlight\GetRight\Config [LastDir]
+HKR\Software\Headlight\GetRight\Config [UninstallLogFile]
+HKR\Software\Headlight\GetRight\Config [VirusScanner]
+
+[GetRight 4.DestDelReg]
+HKR\Software\Headlight\GetRight\ConfigSnd\*
+HKR\Software\Headlight\GetRight\Toolbar\*
+
+[GetRight 4.RegFile]
+HKR\Software\Headlight\GetRight\Config [LogFile]
+HKR\Software\Headlight\GetRight\Config [DropIconNormal]
+
+[GetRight 4.MoveFiles]
+ForceDestFile = GetRight 4.ForceDestFile
+ForceSrcFile = GetRight 4.ForceSrcFile
+CopyFilesEx = GetRight 4.CopyFiles
+
+[GetRight 4.ForceDestFile]
+%GetRightInstPath%\Faces\*
+%GetRightInstPath%\skins\*
+%GetRightInstPath%\sounds\*
+
+[GetRight 4.ForceSrcFile]
+%GetRightInstPath%\mirrors.lst
+%GetRightInstPath%\mymirror.lst
+%GetRightInstPath%\GRFolder.ini
+%GetRightInstPath%\GetRight.ini
+%GetRightInstPath%\GRSkin.ini
+
+[GetRight 4.CopyFiles]
+%GetRightInstPath%\mirrors.lst
+%GetRightInstPath%\mymirror.lst
+%GetRightInstPath%\GRFolder.ini
+%GetRightInstPath%\GetRight.ini
+%GetRightInstPath%\GRSkin.ini
+dir=%GetRightInstPath%\Faces\*
+dir=%GetRightInstPath%\skins\*
+dir=%GetRightInstPath%\sounds\*
+
+
+
+[Odigo.Environment]
+OdigoInstPath= Registry, %HklmWowSoftware%\Novawiz\Odigo [WorkFolder]
+
+[Odigo.Detect]
+File, %OdigoInstPath%\bin\Odigo.exe, VERSION("ProductVersion","3.*")
+
+[Odigo.Instructions]
+DestDelReg = Odigo.DestDelReg
+AddReg = Odigo.AddReg
+CopyFiles = Odigo.Copyfiles
+ForceSrcFile = Odigo.ForceSrcFile
+ForceDestFile = Odigo.ForceDestFile
+
+[Odigo.DestDelReg]
+%HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Run [RunOdigo]
+
+[Odigo.AddReg]
+HKR\Software\Novawiz\Odigo [Skin]
+%HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Run [RunOdigo]
+
+[Odigo.Copyfiles]
+dir=%OdigoInstPath%\Db\*
+%OdigoInstPath%\Locale\gparams.dat
+dir=%OdigoInstPath%\Gallery\*
+dir=%OdigoInstPath%\Plugins\*
+dir=%OdigoInstPath%\Media\*
+dir=%OdigoInstPath%\Sound\*
+
+[Odigo.ForceSrcFile]
+dir=%OdigoInstPath%\Db\*
+%OdigoInstPath%\Locale\gparams.dat
+
+[Odigo.ForceDestFile]
+dir=%OdigoInstPath%\Gallery\*
+dir=%OdigoInstPath%\Plugins\*
+dir=%OdigoInstPath%\Media\*
+dir=%OdigoInstPath%\Sound\*
+
+
+
+[Prodigy Internet.Environment]
+ProdigyInstPath= Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\App Paths\PIStartup.exe [Path]
+
+[Prodigy Internet.Detect]
+File, %ProdigyInstPath%\PIStartup.exe, VERSION("ProductVersion","5.*")
+
+[Prodigy Internet.Instructions]
+AddReg = Prodigy Internet.AddReg
+
+[Prodigy Internet.AddReg]
+HKR\Software\Prodigy\PI Component\AccessRamp [EnableRedial]
+HKR\Software\Prodigy\PI Component\AccessRamp [RedialCount]
+HKR\Software\Prodigy\PI Component\AccessRamp [RedialDelay]
+HKR\Software\Prodigy\PI Component\PiMain\Config\*
+HKR\Software\Prodigy\PI Component\PIAXEmail\Reader [UseExplicit]
+HKR\Software\Prodigy\PI Component\PiDunHk\Settings [PersistentOrb]
+%HklmWowSoftware%\Prodigy\PI Component\AccessRamp\*
+
+
+
+[Quicken 2001.Environment]
+QuickenDir=Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\App Paths\QW.EXE [Path]
+
+[Quicken 2001.Detect]
+File, %QuickenDir%\QW.EXE, VERSION("ProductVersion","010.*")
+
+[Quicken 2001.Instructions]
+copyfilesex=Quicken 2001 CopyfilesEx
+forcesrcfile=Quicken 2001 ForceSrcFile
+
+[Quicken 2001 CopyfilesEx]
+%QuickenDir%\QDATA.QSD,%QuickenDir%
+%QuickenDir%\QW.CFG,%QuickenDir%
+%QuickenDir%\QW.RMD,%QuickenDir%
+
+[Quicken 2001 ForceSrcFile]
+%QuickenDir%\QW.CFG
+%QuickenDir%\QW.RMD
+
+
+
+[RealJukebox 2 Basic.Environment]
+RealJukeboxInstPath = Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\App Paths\realjbox.exe [Path]
+
+[RealJukebox 2 Basic.Detect]
+File, %RealJukeboxInstPath%\realjbox.exe, VERSION("ProductVersion","1.*")
+
+[RealJukebox 2 Basic.Instructions]
+AddReg = RealJukebox 2 Basic.AddReg
+DelRegEx = RealJukebox 2 Basic.DelRegEx
+CopyFilesEx = RealJukebox 2 Basic.CopyFilesEx
+ForceDestFile = RealJukebox 2 Basic.ForceDestFile
+
+[RealJukebox 2 Basic.AddReg]
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealJukebox\1.0\Preferences\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealMediaSDK\6.0\Preferences\*
+HKR\Software\RealNetworks\RealJukebox\1.0\Preferences\*
+
+[RealJukebox 2 Basic.DelRegEx]
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealJukebox\1.0\Preferences\MainApp\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealJukebox\1.0\Preferences\Plugins\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealJukebox\1.0\Preferences, *Path
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealJukebox\1.0\Preferences, WatchFolder*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealJukebox\1.0\Preferences, DownloadDir
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealMediaSDK\6.0\Preferences\CacheFilename\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealMediaSDK\6.0\Preferences\CookiesPath\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealMediaSDK\6.0\Preferences\ExternalResourcesData\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealMediaSDK\6.0\Preferences\ExternalResourcesDirectory\*
+%HklmWowSoftware%\Classes\Software\RealNetworks\RealMediaSDK\6.0\Preferences\PluginHandlerData\*
+
+[RealJukebox 2 Basic.ForceDestFile]
+%RealJukeboxInstPath%\skins\*
+%RealJukeboxInstPath%\templates\*
+%RealJukeboxInstPath%\themes\*
+
+[RealJukebox 2 Basic.CopyFilesEx]
+dir=%RealJukeboxInstPath%\skins\*, %RealJukeboxInstPath%\skins
+dir=%RealJukeboxInstPath%\templates\*, %RealJukeboxInstPath%\templates
+dir=%RealJukeboxInstPath%\themes\*, %RealJukeboxInstPath%\themes
+
+
+
+[Sonique.Environment]
+SoniqueInstPath = Registry, HKR\Software\MediaScience\Sonique\General Preferences 0.80 [SoniquePath]
+
+[Sonique.Detect]
+File, %SoniqueInstPath%\Sonique.exe, VERSION("ProductVersion","1,*")
+
+[Sonique.Instructions]
+ProcessSection = Sonique.MoveFiles
+Regfile = Sonique.RegFile
+AddReg = Sonique.AddReg
+DelReg = Sonique.DelReg
+
+[Sonique.RegFile]
+HKR\Software\MediaScience\Sonique\General Preferences 0.80 [CurrentSkin]
+
+[Sonique.AddReg]
+HKR\Software\MediaScience\Sonique
+HKR\Software\MediaScience\Sonique\General Preferences 0.80\*
+HKR\Software\MediaScience\Sonique\alert\*
+HKR\Software\MediaScience\Sonique\Music_Search\*
+
+[Sonique.DelReg]
+HKR\Software\MediaScience\Sonique\General Preferences 0.80 [DefaultFilesDirectory]
+HKR\Software\MediaScience\Sonique\General Preferences 0.80 [SoniquePath]
+HKR\Software\MediaScience\Sonique\General Preferences 0.80 [SoniqueVersion]
+
+[Sonique.MoveFiles]
+ForceSrcFile = Sonique.ForceSrcFile
+ForceDestFile = Sonique.ForceDestFile
+CopyFiles = Sonique.CopyFiles
+
+[Sonique.ForceSrcFile]
+%SoniqueInstPath%\inetnews.ini
+%SoniqueInstPath%\radio.ini
+%SoniqueInstPath%\sqstart.ini
+%SoniqueInstPath%\svp.ini
+%SoniqueInstPath%\SonEque.spf
+
+[Sonique.ForceDestFile]
+dir=%SoniqueInstPath%\skins\*
+
+[Sonique.CopyFiles]
+%SoniqueInstPath%\inetnews.ini
+%SoniqueInstPath%\radio.ini
+%SoniqueInstPath%\sqstart.ini
+%SoniqueInstPath%\svp.ini
+%SoniqueInstPath%\SonEque.spf
+dir=%SoniqueInstPath%\skins\*
+
+
+
+[WinAmp.Environment]
+WinAmpTmpPath = Registry, %HklmWowSoftware%\Classes\Winamp.File\DefaultIcon []
+WinAmpInstPath = Directory, %WinAmpTmpPath%\..
+WinAmpSkinDir = IniFile, %WinAmpInstPath%\Winamp.ini/Winamp/SkinDir
+
+[WinAmp.Detect]
+File, %WinAmpInstPath%\Winamp.exe, VERSION("ProductVersion","2.*")
+
+[WinAmp.Instructions]
+ForceSrcFile = WinAmp.ForceSrcFile
+CopyFilesEx = WinAmp.CopyFiles
+DelFiles = WinAmp.DelFiles
+DestDelReg = WinAmp.DestDelReg
+AddReg = WinAmp.AddReg
+AddIni = WinAmp.AddIni
+ForceSrcIni = WinAmp.ForceSrcIni
+
+[WinAmp.ForceSrcFile]
+dir=%WinAmpInstPath%\Plugins\*
+dir=%WinAmpInstPath%\Skins\*
+dir=%WinAmpInstPath%\Games\*
+
+[WinAmp.CopyFiles]
+%WinAmpInstPath%\*.xnf
+dir=%WinAmpInstPath%\Plugins\*
+dir=%WinAmpInstPath%\Skins\*
+dir=%WinAmpSkinDir%\*, %WinAmpInstPath%\Skins
+dir=%WinAmpInstPath%\Games\*
+
+[WinAmp.DelFiles]
+%WinAmpInstPath%\Plugins\vis_nsfs.dll
+%WinAmpInstPath%\Plugins\in_mp3.dll
+%WinAmpInstPath%\Plugins\out_wave.dll
+%WinAmpInstPath%\Plugins\vis_avs.dll
+%WinAmpInstPath%\Plugins\in_midi.dll
+%WinAmpInstPath%\Plugins\read_file.dll
+%WinAmpInstPath%\Plugins\in_mod.dll
+%WinAmpInstPath%\Plugins\in_cdda.dll
+%WinAmpInstPath%\Plugins\in_wave.dll
+%WinAmpInstPath%\Plugins\out_disk.dll
+%WinAmpInstPath%\Plugins\out_ds.dll
+%WinAmpInstPath%\Plugins\avs\newpicks\bouncing colorfade.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\bumpaphobia mk2.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\fireworks kaliadascope mk 2.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\groove.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - joy.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - mirrored neatness.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - new interferences rule.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - pretty dots.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - pulsing orb of love.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - quite nice.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - say trip.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - scope to smoke.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - spiro.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - steve likes it.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - superscope love.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin - too much sex.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\justin and tag - brainbug 2 remix.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Arkanoid Legent.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Gold shower 3D (justinmod).avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Living power ball.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - No way to go 3.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Nuclear Blobs.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Oh my god, it's full of stars (justinmod).avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Shirka's eye.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Spacefolding inside a Black Hole.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\lone - Wind in mind.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\Tag - Bitter Paper.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\Tag - Lightspeed.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\Tag - Trance Travel.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\oot.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\oot 2.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\oot 3.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\rotating pretty thing.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\flying around I am.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\flying around I am blended.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\the landscape is killing me.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\the landscape is killing me less.avs
+%WinAmpInstPath%\Plugins\avs\newpicks\the landscape is killing me noblend.avs
+
+[WinAmp.DestDelReg]
+%HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Run [WinAmpAgent]
+
+[WinAmp.AddReg]
+%HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Run [WinAmpAgent]
+
+[WinAmp.AddIni]
+%windir%\Winamp.ini
+%WinAmpInstPath%\Winamp.ini
+%WinAmpInstPath%\Plugins\*.ini
+
+[WinAmp.ForceSrcIni]
+%windir%\Winamp.ini
+%WinAmpInstPath%\Winamp.ini
+%WinAmpInstPath%\Plugins\*.ini
+
+
+[Microsoft Works 2001.Environment]
+WorksInstPath = Registry, %HklmWowSoftware%\Microsoft\Works\6.0 [INSTALLDIR]
+
+[Microsoft Works 2001.Detect]
+Registry, %HklmWowSoftware%\Microsoft\Works\6.0 [ProductGUID], MATCHES({F8D0829C-9C6F-11D3-8080-00C04FA329AA})
+
+[Microsoft Works 2001.Instructions]
+DestDelReg = Microsoft Works 2001.DestDelReg
+AddReg = Microsoft Works 2001.AddReg
+CopyFiles = Microsoft Works 2001.CopyFiles
+
+[Microsoft Works 2001.DestDelReg]
+HKR\Software\Microsoft\Works\6.0\*
+HKR\Software\Microsoft\Software\Microsoft\Database\*
+HKR\Software\Microsoft\Software\Microsoft\MS Proofing Tools\*
+HKR\Software\Microsoft\Software\Microsoft\MS Works SS\*
+HKR\Software\Microsoft\Software\Microsoft\Spreadsheet/Database\*
+HKR\Software\Microsoft\Software\Microsoft\Template Section\*
+HKR\Software\Microsoft\Software\Microsoft\Word Processor\*
+
+[Microsoft Works 2001.AddReg]
+HKR\Software\Microsoft\Works\6.0\*
+HKR\Software\Microsoft\Software\Microsoft\Database\*
+HKR\Software\Microsoft\Software\Microsoft\MS Proofing Tools\*
+HKR\Software\Microsoft\Software\Microsoft\MS Works SS\*
+HKR\Software\Microsoft\Software\Microsoft\Spreadsheet/Database\*
+HKR\Software\Microsoft\Software\Microsoft\Template Section\*
+HKR\Software\Microsoft\Software\Microsoft\Word Processor\*
+
+[Microsoft Works 2001.CopyFiles]
+dir=%WorksInstPath%\Template\*
+
+
+[WordPerfect Office 2000.Environment]
+CorelUninstExe = Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\Uninstall\Corel Applications [UninstallString]
+CorelQProConfPath = Registry, HKR\SOFTWARE\Corel\QuattroPro\9\Configuration\ConfigDir []
+CorelWP9Exe = Registry, %HklmWowSoftware%\Microsoft\Windows\CurrentVersion\App Paths\Wpwin9.exe []
+CorelWPO9Path = Directory, %CorelWP9Exe%\..\..
+
+[WordPerfect Office 2000.Detect]
+File, %CorelUninstExe%, VERSION("ProductVersion","9.*")
+
+[WordPerfect Office 2000.Instructions]
+addreg=WordPerfectOffice Addreg
+addregex=WordPerfectOffice AddregEx
+delreg=WordPerfectOffice Delreg
+destdelregex=WordPerfectOffice DestDelregEx
+regfile=WordPerfectOffice Regfile
+ForceSrcFile=WordPerfectOffice ForceSrcFile
+copyfiles=WordPerfectOffice Copyfiles
+forcesrcfile=WordPerfectOffice ForceSrcFile
+
+[WordPerfectOffice Addreg]
+HKR\Software\Corel\CorelCENTRAL\*
+HKR\Software\Corel\Corel Presentations\*
+HKR\Software\Corel\QuattroPro\*
+HKR\Software\Corel\Shared Settings\*
+HKR\Software\Corel\WordPerfect\*
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Update Quick List with Changes]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Update Default Template From Additional]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Use Default Document Extension]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Use Default Form File Extension]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Use Default Data File Extension]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Labels to Display]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Default Document Extension]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Default Merge Data File Extension]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Default Merge Form File Extension]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Default save file format]
+HKR\Software\Corel\WordPerfect\9\Location of Files\* [Default save file format index]
+HKR\Software\Corel\WritingTools\*
+HKR\Software\Trellix\Trellix_2.1\*
+
+[WordPerfectOffice AddregEx]
+HKR\Software\Corel\WordPerfect\9\Location of Files\*, On Save*
+
+[WordPerfectOffice Delreg]
+HKR\Software\Corel\CorelCENTRAL\9 [Home Folder]
+HKR\Software\Corel\Corel Presentations\9\Location of Files\*
+HKR\Software\Corel\Corel Presentations\9\MRULists\*
+HKR\Software\Corel\Corel Presentations\9\Presentation\*
+HKR\Software\Corel\QuattroPro\9\Configuration\ConfigDir\*
+HKR\Software\Corel\QuattroPro\9\Configuration\PrivDir\*
+HKR\Software\Corel\QuattroPro\9\Configuration\ToolDir\*
+HKR\Software\Corel\QuattroPro\9\Configuration\WorkDir\*
+HKR\Software\Corel\QuattroPro\9\Location of Files\*
+HKR\Software\Corel\QuattroPro\9\MRULists\*
+HKR\Software\Corel\QuattroPro\9\Properties\File Options [Auto Load File]
+HKR\Software\Corel\QuattroPro\9\Properties\File Options [Quick Template]
+HKR\Software\Corel\QuattroPro\9\Properties\File Options [Working Dir]
+HKR\Software\Corel\QuattroPro\9\
+HKR\Software\Corel\WordPerfect\9\Java\*
+HKR\Software\Corel\WordPerfect\9\Location of Files\*
+HKR\Software\Corel\WordPerfect\9\MRULists\*
+HKR\Software\Corel\WordPerfect\9\SGML [Open Dialog Default Folder]
+HKR\Software\Corel\WordPerfect\9\SGML [Project Base Template]
+HKR\Software\Corel\WordPerfect\9\SGML [Template Folder]
+HKR\Software\Corel\WordPerfect\9\SGML\Catalog Files\*
+HKR\Software\Corel\WordPerfect\9\SGML\DTD to LGC\*
+HKR\Software\Corel\WordPerfect\9\SGML\Layout Designer\*
+HKR\Software\Corel\WritingTools\9\Grammatik\* [Advice File]
+HKR\Software\Corel\WritingTools\9\Grammatik\* [Help File]
+HKR\Software\Corel\WritingTools\9\Grammatik\* [History File]
+HKR\Software\Corel\WritingTools\9\Grammatik\* [Mor Dictionary]
+HKR\Software\Corel\WritingTools\9\Grammatik\* [Rule File]
+HKR\Software\Corel\WritingTools\9\Thesaurus\* [Data File]
+HKR\Software\Corel\WritingTools\9\Main Word Lists\*
+HKR\Software\Trellix\Trellix_2.1\Settings [InstallPath]
+HKR\Software\Trellix\Trellix_2.1\TlxCtrl\Recent File List\*
+HKR\Software\Trellix\Trellix_2.1\TlxCtrl\Settings [DocPath]
+
+[WordPerfectOffice DestDelregEx]
+HKR\Software\Corel\WordPerfect\9\Application Bar, Box*
+
+
+[WordPerfectOffice Regfile]
+HKR\Software\Corel\CorelCENTRAL\9\Memos [Memos Location]
+HKR\Software\Corel\WritingTools\9\User Word Lists\* [Name]
+
+[WordPerfectOffice Copyfiles]
+Dir = %CSIDL_PERSONAL%\CCWin9\*
+%CorelQProConfPath%\*.cfg
+%CorelWPO9Path%\template\Custom WP Templates\*.wpt
+%CorelWPO9Path%\programs\*.prt
+
+[WordPerfectOffice ForceSrcFile]
+Dir = %CSIDL_PERSONAL%\CCWin9\*
+%CorelQProConfPath%\*.cfg
+%CorelWPO9Path%\template\Custom WP Templates\*.wpt
+%CorelWPO9Path%\programs\*.prt
+
+
+[WsFTPLE5.Environment]
+WsFTPLE5InstPath = IniFile, %windir%\win.ini/WS_FTP/DIR
+
+[WsFTPLE5.Detect]
+File, %WsFTPLE5InstPath%\WS_FTP95.EXE, VERSION("ProductVersion","6,*")
+
+[WsFTPLE5.Instructions]
+ForceSrcFile = WsFTPLE5.ForceSrcFile
+CopyFilesEx = WsFTPLE5.CopyFilesEx
+
+[WsFTPLE5.ForceSrcFile]
+%WsFTPLE5InstPath%\WS_FTP.INI
+
+[WsFTPLE5.CopyFilesEx]
+%windir%\WS_FTP.CNV
+%windir%\WS_FTP.EXT
+%WsFTPLE5InstPath%\WS_FTP.INI, %WsFTPLE5InstPath%
+
+
+[MSN Zone 6.Environment]
+ZonePath = Registry, %HklmWowSoftware%\Microsoft\Internet Gaming Zone\Setup [Path]
+
+[MSN Zone 6.Detect]
+File, %ZonePath%\zone.exe, VERSION("ProductVersion","6.*")
+
+[MSN Zone 6.Instructions]
+addreg = MSN Zone 6 Addreg
+delreg = MSN Zone 6 Delreg
+copyfilesEx = MSN Zone 6 CopyfilesEx
+
+[MSN Zone 6 Addreg]
+%HklmWowSoftware%\Microsoft\Internet Gaming Zone\Setup [Z6EULA]
+%HklmWowSoftware%\Microsoft\Internet Gaming Zone\ZoneClient\*
+HKR\Software\Microsoft\MSAPSharedCache\DPA\Zone\*
+HKR\Software\Microsoft\MSAPSharedCache\RPA\Zone\*
+
+[MSN Zone 6 Delreg]
+%HklmWowSoftware%\Microsoft\Internet Gaming Zone\ZoneClient [DataCenterPath]
+%HklmWowSoftware%\Microsoft\Internet Gaming Zone\ZoneClient [DataFileSite]
+%HklmWowSoftware%\Microsoft\Internet Gaming Zone\ZoneClient [Host]
+
+[MSN Zone 6 CopyFilesEx]
+dir=%zonepath%\Favorites\*
+
+
+
+
+[Strings]
+photoshop6 = "Adobe Photoshop"
+ATMDeluxe41 = "Adobe Type Manager Deluxe 4.1"
+aim = "AOL Instant Messenger"
+battlecom = "BattleCom"
+cuteftp4 = "CuteFTP"
+EudoraAddBook = "Eudora Migrated Address Book.txt"
+GameVoice = "Sidewinder Game Voice"
+Netmeeting3 = "Microsoft Netmeeting"
+msnexp10 = "MSN Explorer"
+msnzone6 = "MSN Gaming Zone"
+msmoney2001 = "Microsoft Money"
+msmsgr36 = "Microsoft Messenger"
+msmvm1 = "Windows Movie Maker"
+RealJukebox2 = "RealJukebox 2 Basic"
+Works_Suite_2001 = "Microsoft Works 2001"
+Prodigy = "Prodigy Internet"
+Quicken2001 = "Quicken"
+RogerWilco = "Roger Wilco"
+Sonique = "Sonique Media Player"
+WordPerfectOffice_2000 = "WordPerfect Office 2000"
+WsFTPLE5 = "WS_FTP Limited Edition"
+GetRight4 = "GetRight Download Manager"
+GoZilla = "Go!Zilla"
+Odigo = "Odigo Messenger"
+WinAmp = "WinAmp Media Player"
+icq = "ICQ"
+
+;
+; unlocalized strings:
+;
+HkrWindowsNT        = "HKR\Software\Microsoft\Windows NT\CurrentVersion"
+HklmWindowsNT       = "HKLM\Software\Microsoft\Windows NT\CurrentVersion"
+HkrWindows          = "HKR\Software\Microsoft\Windows\CurrentVersion"
+HklmWindows         = "HKLM\Software\Microsoft\Windows\CurrentVersion"
+HklmWowSoftware = "HKLM\Software"

@@ -1,0 +1,186 @@
+#include ( "POLPRO.MOF" )
+
+#pragma classflags( "forceupdate" )
+
+///////////////////////////////////////////////////////////////////////////////
+// Policy Maker Pro RSoP classes specific to the User namespace
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrApplicationSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrApplicationSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrApplicationSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrDriveSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrDriveSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrDriveSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrInternetSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrInternetSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrInternetSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrIE7Setting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrInternetSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrIE7Setting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrSharedPrinterSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrSharedPrinterSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrSharedPrinterSetting : RSOP_PolmkrPrinterSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrProfileSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrProfileSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrProfileSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrFolderOptionsSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrFolderOptionsSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrFolderOptionsSetting : RSOP_PolmkrFolderOptionSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrOpenWithSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrOpenWithSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrOpenWithSetting : RSOP_PolmkrFolderOptionSetting
+{
+   uint32 precedence;
+};

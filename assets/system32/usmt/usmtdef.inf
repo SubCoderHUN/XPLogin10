@@ -1,0 +1,339 @@
+[Version]
+Signature="$Windows NT$"
+DriverVer=07/01/2001,5.1.2535.0
+
+[OSFILES]
+System Files
+
+[OSFILESPATTERN]
+System Files.Patterns
+
+[OSFILESEXCLUDED]
+System Files.Excluded
+
+[NONCRITICALFILES]
+System Files.NonCritical
+
+[AddObject]
+Registry,0,"HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\CLSID\{871c5380-42a0-1069-a2ea-08002b30309d}\ShellFolder","Attributes",0x00000004,0x00000024
+Registry,0,"HKCU\Control Panel\Desktop","SCRNSAVE.EXE",0x00000001,""
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Access","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Excel","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\FrontPage","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Office","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Outlook","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Powerpoint","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Publisher","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\9.0\Common\Migration\Word","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Access","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Excel","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\FrontPage","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Office","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Outlook","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Powerpoint","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Publisher","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\10.0\Common\Migration\Word","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Access","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Excel","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\FrontPage","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Office","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Outlook","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Powerpoint","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Publisher","Lang",0x00000004,0x00000409
+Registry,0,"HKLM\Software\Microsoft\Office\11.0\Common\Migration\Word","Lang",0x00000004,0x00000409
+Registry,0,"HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\SysTray","Services",0x00000004,0x00000004
+
+[AddIniRegObject.9x]
+%windir%\system.ini,boot,SCRNSAVE.EXE,HKCU\Control Panel\Desktop,SCRNSAVE.EXE
+
+[System Settings]
+OSFilesEnvironment
+
+[OSFilesEnvironment.Environment.9X]
+%OSCleanMgrPath% = File, %windir%\cleanmgr.exe
+%OSControlPath% = File, %windir%\control.exe
+%OSDefragPath% = File, %windir%\defrag.exe
+%OSDrWatsonPath% = File, %windir%\drwatson.exe
+%OSFontviewPath% = File, %windir%\fontview.exe
+%OSPackagerPath% = File, %windir%\packager.exe
+%OSProgmanPath% = File, %windir%\progman.exe
+%OSSigVerifPath% = File, %windir%\sigverif.exe
+%OSWinVerPath% = File, %windir%\winver.exe
+%OSWUpdMgrPath% = File, %windir%\wupdmgr.exe
+%OSCalcPath% = File, %windir%\calc.exe
+%OSSndRec32Path% = File, %windir%\sndrec32.exe
+%OSSndVol32Path% = File, %windir%\sndvol32.exe
+%OSWritePath% = File, %windir%\write.exe
+%OSCharMapPath% = File, %windir%\charmap.exe
+%OSClipbrdPath% = File, %windir%\clipbrd.exe
+%OSDialerPath% = File, %windir%\dialer.exe
+%OSFreeCellPath% = File, %windir%\freecell.exe
+%OSMSHeartsPath% = File, %windir%\mshearts.exe
+%OSSolPath% = File, %windir%\sol.exe
+%OSWinMinePath% = File, %windir%\winmine.exe
+%OSWScriptPath% = File, %windir%\wscript.exe
+%OSFtpPath% = File, %windir%\ftp.exe
+%OSNetPath% = File, %windir%\net.exe
+%OSPingPath% = File, %windir%\ping.exe
+%OSRoutePath% = File, %windir%\route.exe
+%OSTelnetPath% = File, %windir%\telnet.exe
+%OSTracertPath% = File, %windir%\tracert.exe
+%OSMSPaintPath% = File, %ProgramFiles%\%Accessories9X%\mspaint.exe
+%OSAccessoriesPath% = Directory, %ProgramFiles%\%Accessories9X%
+%OSHypertrmPath% = File, %ProgramFiles%\%Accessories9X%\hypertrm.exe
+
+[OSFilesEnvironment.Environment.NT]
+%OSCleanMgrPath% = File, %system%\cleanmgr.exe
+%OSControlPath% = File, %system%\control.exe
+%OSDefragPath% = File, %system%\defrag.exe
+%OSDrWatsonPath% = File, %system%\drwatson.exe
+%OSFontviewPath% = File, %system%\fontview.exe
+%OSPackagerPath% = File, %system%\packager.exe
+%OSProgmanPath% = File, %system%\progman.exe
+%OSSigVerifPath% = File, %system%\sigverif.exe
+%OSWinVerPath% = File, %system%\winver.exe
+%OSWUpdMgrPath% = File, %system%\wupdmgr.exe
+%OSCalcPath% = File, %system%\calc.exe
+%OSSndRec32Path% = File, %system%\sndrec32.exe
+%OSSndVol32Path% = File, %system%\sndvol32.exe
+%OSWritePath% = File, %system%\write.exe
+%OSCharMapPath% = File, %system%\charmap.exe
+%OSClipbrdPath% = File, %system%\clipbrd.exe
+%OSDialerPath% = File, %ProgramFiles%\%WindowsNT%\dialer.exe
+%OSFreeCellPath% = File, %system%\freecell.exe
+%OSMSHeartsPath% = File, %system%\mshearts.exe
+%OSSolPath% = File, %system%\sol.exe
+%OSWinMinePath% = File, %system%\winmine.exe
+%OSWScriptPath% = File, %system%\wscript.exe
+%OSFtpPath% = File, %system%\ftp.exe
+%OSNetPath% = File, %system%\net.exe
+%OSPingPath% = File, %system%\ping.exe
+%OSRoutePath% = File, %system%\route.exe
+%OSTelnetPath% = File, %system%\telnet.exe
+%OSTracertPath% = File, %system%\tracert.exe
+%OSMSConfigPath% = File, %system%\tracert.exe
+%OSMSPaintPath% = File, %system%\mspaint.exe
+%OSAccessoriesPath% = Directory, %ProgramFiles%\%WindowsNT%\%AccessoriesNT%
+%OSHypertrmPath% = File, %ProgramFiles%\%WindowsNT%\hypertrm.exe
+
+[Administrator User Scripts]
+Copy This User State
+
+[Administrator Scripts]
+Copy This State
+Local Settings Exclusion
+
+[Local Settings Exclusion]
+DelFiles=Local Settings Exclusion.DelFiles
+
+[Local Settings Exclusion.DelFiles]
+dir=%CSIDL_LOCAL_APPDATA%\*
+dir=%windir%\$Nt*Uninstall*$\*
+
+[SCR Rename]
+ss3dfo.scr=ss3dfo.scr
+sspipes.scr=sspipes.scr
+sstext3d.scr=sstext3d.scr
+ssflwbox.scr=ssflwbox.scr
+scrnsave.scr=scrnsave.scr
+ssbezier.scr=ssbezier.scr
+ssstars.scr=ssstars.scr
+ssmyst.scr=ssmyst.scr
+ssmypics.scr=ssmypics.scr
+ssmarque.scr=ssmarque.scr
+
+"ÄéáóôçìéêŞ ğôŞóç.scr" = ssstars.scr
+"ÉğôÜìåíá áíôéêåßìåíá 3Ä.scr" = ss3dfo.scr
+"Étoiles.scr" = ssstars.scr
+"¿ìÁÖ °ø°£.scr" = ssstars.scr
+"»ç¿ëÀÚ ÀÔ·Â ¹®±¸.scr" = ssmarque.scr
+"ÈıÎ¬·ÉĞĞÎï.scr" = ss3dfo.scr
+"ÈıÎ¬ÃÔ¹¬.scr" = sspipes.scr
+"ÈıÎ¬ÎÄ×Ö.scr" = sstext3d.scr
+"ÈıÎ¬±äĞÎÎï.scr" = ssflwbox.scr
+"ÌõóôŞñéï.scr" = ssmyst.scr
+"ÌÜæá 3Ä.scr" = sspipes.scr
+"ÃãÃß´Â ´Ù°¢Çü.scr" = ssmyst.scr
+"Ìåòàìîğôîçû.scr" = ssflwbox.scr
+"Ãåîìåòğè÷åñêèé âàëüñ.scr" = ssmyst.scr
+"¹ö¶¯×ÖÄ».scr" = ssmarque.scr
+"¶à²ÊÇúÏß.scr" = ssbezier.scr
+"Ëàáèğèíò.scr" = sspipes.scr
+"Âå÷íûé äâèãàòåëü.scr" = ssbezier.scr
+"Ëåòàşùèå îáúåêòû.scr" = ss3dfo.scr
+"Ñêâîçü âñåëåííóş.scr" = ssstars.scr
+"Êõëéüìåíï ìŞíõìá.scr" = ssmarque.scr
+"ĞÇ¿ÕÄ£Äâ.scr" = ssstars.scr
+"Êáìğıëåò êáé ×ñşìáôá.scr" = ssbezier.scr
+"Ğëáßóéï ëïõëïõäéşí 3Ä.scr" = ssflwbox.scr
+"Êåßìåíï 3Ä.scr" = sstext3d.scr
+"Áåãóùàÿ ñòğîêà.scr" = ssmarque.scr
+"ØÎŞİ.scr" = ssbezier.scr
+"×²İ ±°Ä.scr" = ssmyst.scr
+"Îáúåìíûé òåêñò.scr" = sstext3d.scr
+"±ä»ÃÏß.scr" = ssmyst.scr
+"3-ulotteinen kukkalaatikko.scr" = ssflwbox.scr
+"3-ulotteinen labyrintti.scr" = sspipes.scr
+"3-ulotteinen teksti.scr" = sstext3d.scr
+"3-ulotteiset lentävät esineet.scr" = ss3dfo.scr
+"3Â÷¿ø ³ª´Â °³Ã¼.scr" = ss3dfo.scr
+"3Â÷¿ø ÅØ½ºÆ®.scr" = sstext3d.scr
+"3Â÷¿ø °î¼±.scr" = ssbezier.scr
+"3B Labirent.scr" = sspipes.scr
+"3B Metin.scr" = sstext3d.scr
+"3B Saksı.scr" = ssflwbox.scr
+"3B Uçan Nesneler.scr" = ss3dfo.scr
+"3D-Bukett.scr" = ssflwbox.scr
+"3D-förvandlaren.scr" = ssflwbox.scr
+"3D-flygande objekt.scr" = ss3dfo.scr
+"3D-labyrint.scr" = sspipes.scr
+"3D-Labyrinth.scr" = sspipes.scr
+"3D-Objekte.scr" = ss3dfo.scr
+"3D-text.scr" = sstext3d.scr
+"3D - blomstereske.scr" = ssflwbox.scr
+"3D - flygende objekter.scr" = ss3dfo.scr
+"3D - labyrint.scr" = sspipes.scr
+"3D - tekst.scr" = sstext3d.scr
+"3D Ã·½Ä (OpenGL).scr" = sstext3d.scr
+"3D Ì×Ü°ÎŞ¯¸½ (OpenGL).scr" = ssflwbox.scr
+"3D ¹Ì·Î.scr" = sspipes.scr
+"3D ²ÉÇÇ´Â »óÀÚ.scr" = ssflwbox.scr
+"3D ƒeƒLƒXƒg (OpenGL).scr" = sstext3d.scr
+"3D ƒtƒ‰ƒ[ƒ{ƒbƒNƒX (OpenGL).scr" = ssflwbox.scr
+"3D Blomsterkasse.scr" = ssflwbox.scr
+"3D doolhof (OpenGL).scr" = sspipes.scr
+"3D Doolhof.scr" = sspipes.scr
+"3D Flyvende objekter.scr" = ss3dfo.scr
+"3D labirintus.scr" = sspipes.scr
+"3D Labyrint.scr" = sspipes.scr
+"3D Maze.scr" = sspipes.scr
+"3D ”òs•¨‘Ì (OpenGL).scr" = ss3dfo.scr
+"3D Plantenbak.scr" = ssflwbox.scr
+"3D repülõ tárgyak.scr" = ss3dfo.scr
+"3D szöveg.scr" = sstext3d.scr
+"3D tekst (OpenGL).scr" = sstext3d.scr
+"3D Tekst.scr" = sstext3d.scr
+"3D Text.scr" = sstext3d.scr
+"3D toverdoos (OpenGL).scr" = ssflwbox.scr
+"3D –À˜H (OpenGL).scr" = sspipes.scr
+"3D virágláda.scr" = ssflwbox.scr
+"3D vliegende objecten (OpenGL).scr" = ss3dfo.scr
+"3D Vliegende objecten.scr" = ss3dfo.scr
+"ƒŠƒ{ƒ“.scr" = ssbezier.scr
+"ƒ‰ƒCƒ“ ƒA[ƒg.scr" = ssmyst.scr
+"Avaruusmatka.scr" = ssstars.scr
+"Bìící text.scr" = ssmarque.scr
+"Bezier.scr" = ssbezier.scr
+"Beziers.scr" = ssbezier.scr
+"Boîte florissante 3D.scr" = ssflwbox.scr
+"Caixa florescente 3D.scr" = ssflwbox.scr
+"Campo estelar.scr" = ssstars.scr
+"Courbes et couleurs.scr" = ssbezier.scr
+"Curvas e cores.scr" = ssbezier.scr
+"Curvas y colores.scr" = ssbezier.scr
+"Curven en kleuren.scr" = ssbezier.scr
+"Curves and Colors.scr" = ssbezier.scr
+"Dansende lijnen.scr" = ssmyst.scr
+"Dansende polygoner.scr" = ssmyst.scr
+"Eğriler ve Renkler.scr" = ssbezier.scr
+"‰F’ˆ”òs.scr" = ssstars.scr
+"En reise gjennom rommet.scr" = ssstars.scr
+"Figuras en 3D.scr" = ssflwbox.scr
+"Flor 3D.scr" = ssflwbox.scr
+"Flyga genom rymden.scr" = ssstars.scr
+"Flying Through Space.scr" = ssstars.scr
+"Formas y figuras.scr" = ssmyst.scr
+"Fényújság.scr" = ssmarque.scr
+"Görbék és színek.scr" = ssbezier.scr
+"Geometri.scr" = ssmyst.scr
+"Hayal Dünyası.scr" = ssmyst.scr
+"Køivky a barvy.scr" = ssbezier.scr
+"Kaaret ja värit.scr" = ssbezier.scr
+"Kayan Yazı.scr" = ssmarque.scr
+"Krzywe i kolory.scr" = ssbezier.scr
+"Kurver og farger.scr" = ssbezier.scr
+"Kurvor och färger.scr" = ssbezier.scr
+"Kwiatek 3W.scr" = ssflwbox.scr
+"Laberinto 3D.scr" = sspipes.scr
+"Labirinto 3D.scr" = sspipes.scr
+"Labirynt 3W.scr" = sspipes.scr
+"Labyrinthe 3D.scr" = sspipes.scr
+"Lataj¹c w przestrzeni.scr" = ssstars.scr
+"Lataj¹ce obiekty 3W.scr" = ss3dfo.scr
+"Letreiro digital.scr" = ssmarque.scr
+"Lichtkrant.scr" = ssmarque.scr
+"Lysavis.scr" = ssmarque.scr
+"Marquee.scr" = ssmarque.scr
+"Marquesina desplazándose.scr" = ssmarque.scr
+"Metamorfózis.scr" = ssmyst.scr
+"Mistificação.scr" = ssmyst.scr
+"Mystifiez votre esprit.scr" = ssmyst.scr
+"Mystifikace.scr" = ssmyst.scr
+"Mystify Your Mind.scr" = ssmyst.scr
+"Mystify.scr" = ssmyst.scr
+"Neon.scr" = ssmarque.scr
+"“`Œ¾”Â.scr" = ssmarque.scr
+"Objectos voadores 3D.scr" = ss3dfo.scr
+"Objetos 3D.scr" = ss3dfo.scr
+"Objetos voadores 3D.scr" = ss3dfo.scr
+"Objets volants 3D.scr" = ss3dfo.scr
+"Painel rolante.scr" = ssmarque.scr
+"Panneau lumineux.scr" = ssmarque.scr
+"Polígonos.scr" = ssmyst.scr
+"Prùlet hvìzdokupou.scr" = ssstars.scr
+"Prostorovı text.scr" = sstext3d.scr
+"Prostorová kvìtina.scr" = ssflwbox.scr
+"Prostorové bludištì.scr" = sspipes.scr
+"Prostorové létající objekty.scr" = ss3dfo.scr
+"Rullande remsa.scr" = ssmarque.scr
+"Rullende tekst.scr" = ssmarque.scr
+"Rumrejse.scr" = ssstars.scr
+"Scrolling Marquee.scr" = ssmarque.scr
+"Starfield Simulation.scr" = ssstars.scr
+"Sterren.scr" = ssstars.scr
+"Tekst 3W.scr" = sstext3d.scr
+"Texte 3D.scr" = sstext3d.scr
+"Texte défilant.scr" = ssmarque.scr
+"Texto 3D.scr" = sstext3d.scr
+"Ukryj swe myœli.scr" = ssmyst.scr
+"Univerzum.scr" = ssstars.scr
+"Uzayda Yolculuk.scr" = ssstars.scr
+"Vaeltavat kuviot.scr" = ssmyst.scr
+"Viesti.scr" = ssmarque.scr
+"Voar pelo espaço.scr" = ssstars.scr
+"Volando por el espacio.scr" = ssstars.scr
+"3D Pipes.scr" = sspipes.scr
+"3D Flying Objects.scr" = ss3dfo.scr
+"3D Text.scr" = sstext3d.scr
+"3D Flower Box.scr" = ssflwbox.scr
+
+[ExcludedLinks]
+"*\EXPLORER.EXE","::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\::{992CFFA0-F557-101A-88EC-00DD010CCC48}","*"
+"%%windir%%\Installer\{*}\ACCICONS.EXE","*","*"
+"%%windir%%\Installer\{*}\CAGICON.EXE","*","*"
+"%%windir%%\Installer\{*}\FPICON.EXE","*","*"
+"%%windir%%\Installer\{*}\MISC.EXE","*","*"
+"%%windir%%\Installer\{*}\MSPICONS.EXE","*","*"
+"%%windir%%\Installer\{*}\OPWICON.EXE","*","*"
+"%%windir%%\Installer\{*}\OUTICON.EXE","*","*"
+"%%windir%%\Installer\{*}\PEICONS.EXE","*","*"
+"%%windir%%\Installer\{*}\PPTICO.EXE","*","*"
+"%%windir%%\Installer\{*}\UNBNDICO.EXE","*","*"
+"%%windir%%\Installer\{*}\WORDICON.EXE","*","*"
+"%%windir%%\Installer\{*}\XLICONS.EXE","*","*"
+
+[EquivalentLinks]
+"*\wmplayer.exe","/prefetch:1","*","*\wmplayer.exe","","*"
+
+[Strings]
+Accessories9X = "Accessories"
+AccessoriesNT = "Accessories"
+WindowsNT = "Windows NT"
+
+;
+; unlocalized strings:
+;
+HkrWindowsNT        = "HKR\Software\Microsoft\Windows NT\CurrentVersion"
+HklmWindowsNT       = "HKLM\Software\Microsoft\Windows NT\CurrentVersion"
+HkrWindows          = "HKR\Software\Microsoft\Windows\CurrentVersion"
+HklmWindows         = "HKLM\Software\Microsoft\Windows\CurrentVersion"

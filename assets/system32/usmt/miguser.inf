@@ -1,0 +1,162 @@
+[version]
+Signature=$Windows NT$
+DriverVer=07/01/2001,5.1.2535.0
+
+
+[User Settings]
+Desktop,, dir,%csidl_desktopdirectory%
+Start Menu,, dir,%csidl_startmenu%
+Favorites,, dir,%csidl_favorites%
+My Pictures,, dir,%csidl_mypictures%
+My Documents,, dir,%csidl_personal%
+Quick Launch,, dir,%QuickLaunchDir%
+
+[System Settings]
+Shared Desktop,, dir,%csidl_common_desktopdirectory%
+Shared Start Menu,, dir,%csidl_common_startmenu%
+Shared Favorites,, dir,%csidl_common_favorites%
+Shared Documents,, dir,%csidl_common_documents%
+
+
+[Desktop.Detect]
+Directory,%csidl_desktopdirectory%,EXISTS
+
+[Desktop.Instructions]
+ForceDestFile = Desktop.ForceDestFile
+CopyFilesFiltered = Desktop.CopyFilesFiltered
+
+[Desktop.ForceDestFile]
+%csidl_desktopdirectory%\desktop.ini
+
+[Desktop.CopyFilesFiltered]
+dir=%csidl_desktopdirectory%\*
+
+
+[Shared Desktop.Detect]
+Directory,%csidl_common_desktopdirectory%,EXISTS,!SAMEOBJECTNAME(%csidl_desktopdirectory%)
+
+[Shared Desktop.Instructions]
+ForceDestFile = Shared Desktop.ForceDestFile
+CopyFilesFiltered = Shared Desktop.CopyFilesFiltered
+
+[Shared Desktop.ForceDestFile]
+%csidl_common_desktopdirectory%\desktop.ini
+
+[Shared Desktop.CopyFilesFiltered]
+dir=%csidl_common_desktopdirectory%\*
+
+
+[Start Menu.Detect]
+Directory,%csidl_startmenu%,EXISTS
+
+[Start Menu.Instructions]
+ForceDestFile = Start Menu.ForceDestFile
+CopyFilesFiltered = Start Menu.CopyFilesFiltered
+
+[Start Menu.ForceDestFile]
+%csidl_startmenu%\desktop.ini
+
+[Start Menu.CopyFilesFiltered]
+dir=%csidl_startmenu%\*
+
+
+[Shared Start Menu.Detect]
+Directory,%csidl_common_startmenu%,EXISTS,!SAMEOBJECTNAME(%csidl_startmenu%)
+
+[Shared Start Menu.Instructions]
+ForceDestFile = Shared Start Menu.ForceDestFile
+CopyFilesFiltered = Shared Start Menu.CopyFilesFiltered
+
+[Shared Start Menu.ForceDestFile]
+%csidl_common_startmenu%\desktop.ini
+
+[Shared Start Menu.CopyFilesFiltered]
+dir=%csidl_common_startmenu%\*
+
+
+[My Pictures.Detect]
+Directory,%csidl_mypictures%,EXISTS
+
+[My Pictures.Instructions]
+ForceDestFile = My Pictures.ForceDestFile
+CopyFilesFiltered = My Pictures.CopyFilesFiltered
+
+[My Pictures.ForceDestFile]
+%csidl_mypictures%\desktop.ini
+
+[My Pictures.CopyFilesFiltered]
+dir=%csidl_mypictures%\*
+
+
+[My Documents.Detect]
+Directory,%csidl_personal%,EXISTS
+
+[My Documents.Instructions]
+ForceDestFile = My Documents.ForceDestFile
+CopyFilesFiltered = My Documents.CopyFilesFiltered
+
+[My Documents.ForceDestFile]
+%csidl_personal%\desktop.ini
+
+[My Documents.CopyFilesFiltered]
+dir=%csidl_personal%\*
+
+
+[Shared Documents.Detect]
+Directory,%csidl_common_documents%,EXISTS,!SAMEOBJECTNAME(%csidl_personal%)
+
+[Shared Documents.Instructions]
+ForceDestFile = Shared Documents.ForceDestFile
+CopyFilesFiltered = Shared Documents.CopyFilesFiltered
+
+[Shared Documents.ForceDestFile]
+%csidl_common_documents%\desktop.ini
+
+[Shared Documents.CopyFilesFiltered]
+dir=%csidl_common_documents%\*
+
+
+[Quick Launch.Detect]
+Directory,%QuickLaunchDir%,EXISTS
+
+[Quick Launch.Instructions]
+ForceDestFile = Quick Launch.ForceDestFile
+CopyFilesFiltered = Quick Launch.CopyFilesFiltered
+
+[Quick Launch.ForceDestFile]
+%QuickLaunchDir%\desktop.ini
+
+[Quick Launch.CopyFilesFiltered]
+dir=%QuickLaunchDir%\*
+
+
+[Favorites.Detect]
+Directory,%CSIDL_FAVORITES%,EXISTS
+
+[Favorites.Instructions]
+ForceDestFile = Favorites.ForceDestFile
+CopyFilesFiltered = Favorites.CopyFilesFiltered
+
+[Favorites.ForceDestFile]
+%CSIDL_FAVORITES%\desktop.ini
+
+[Favorites.CopyFilesFiltered]
+dir=%CSIDL_FAVORITES%\*
+
+
+[Shared Favorites.Detect]
+Directory,%csidl_common_favorites%,EXISTS,!SAMEOBJECTNAME(%csidl_favorites%)
+
+[Shared Favorites.Instructions]
+ForceDestFile = Shared Favorites.ForceDestFile
+CopyFilesFiltered = Shared Favorites.CopyFilesFiltered
+
+[Shared Favorites.ForceDestFile]
+%csidl_common_favorites%\desktop.ini
+
+[Shared Favorites.CopyFilesFiltered]
+dir=%csidl_common_favorites%\*
+
+
+[Strings]
+QuickLaunchDir = "%csidl_appdata%\Microsoft\Internet Explorer\Quick Launch"

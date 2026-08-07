@@ -1,0 +1,55 @@
+#pragma classflags( "forceupdate" )
+
+///////////////////////////////////////////////////////////////////////////////
+// PolicyMaker RSoP base class for all products
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Abstract,
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrSetting for American "
+      "English" ) : Amended
+]
+class RSOP_PolmkrSetting : RSOP_PolicySetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Properties for RSOP_PolmkrSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      DisplayName( "GPO Display Name" ) : Amended
+   ]
+   string polmkrBaseGpoDisplayName;
+
+   [
+      DisplayName( "GPO GUID" ) : Amended
+   ]
+   string polmkrBaseGpoGuid;
+
+   [
+      DisplayName( "CSE GUID" ) : Amended
+   ]
+   string polmkrBaseCseGuid;
+
+   [
+      DisplayName( "GPE GUID" ) : Amended
+   ]
+   string polmkrBaseGpeGuid;
+
+   [
+      DisplayName( "Hash" ) : Amended
+   ]
+   string polmkrBaseHash;
+
+   [
+      DisplayName( "Key Values" ) : Amended
+   ]
+   string polmkrBaseKeyValues[];
+
+   [
+      DisplayName( "Instance XML" ) : Amended
+   ]
+   string polmkrBaseInstanceXml;
+};

@@ -1,0 +1,145 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) Microsoft Corporation
+//
+// SYNOPSIS
+//
+// Defines NapClient WMI Schema
+//
+//////////////////////////////////////////////////////////////////////////////
+
+#PRAGMA AUTORECOVER
+#pragma namespace("\\\\.\\root\\Nap")
+
+
+// NAP_Client
+// Information exposed through the INapClientInfo
+//
+[
+    description("NAP Client - implemented in the NAPagent"
+       "service"), 
+    singleton: ToInstance,
+    dynamic: ToInstance,
+    provider("NAP_ClientProvider")
+]
+
+class NAP_Client
+{
+      [read, description("NAP Client Name")]
+    string name;
+
+      [read, description("Description of the NAP client")]
+    string description;
+
+      [read, description("Indicates if the NAPagent"
+                "service is enabled or not")]
+    boolean napEnabled;
+
+      [read, description("This variable gives the version"
+                "of the NAP protocol")]
+    string napProtocolVersion;
+
+      [read, description("Isolation state of the system"),
+       ValueMap{"1","2","3"},
+       Values{"IsolationState_NotRestricted",
+              "IsolationState_InProbation",
+              "IsolationState_RestrictedAccess"}]
+    uint32 systemIsolationState;
+
+      [read, description ("Absolute time for probation"
+                "expiration, if client is in Probation")]
+    string probationTime;
+
+      [read, description("Fixup-URL if client has"
+                "restricted access")]
+    string fixupURL;
+};
+
+
+// NAP_SystemHealthAgent
+// Static and dynamic information about the SHA
+// Dynamic information is available only if bound
+//
+[
+    description("NAP SystemHealthAgent - provides "
+       "information about the registered SHAs"), 
+    dynamic: ToInstance, 
+    provider("NAP_ClientProvider")
+]
+
+class NAP_SystemHealthAgent
+{
+      [key, read, description ("SystemHealthAgent Id")]
+    uint32 id;
+   
+      [read, description ("FriendlyName for the SHA")]
+    string friendlyName;
+
+      [read, description ("Description of the SHA")]
+    string description;    
+
+      [read, description ("Version number of the SHA")]
+    string version;
+
+      [read, description ("VendorName of the SHA")]
+    string vendorName;
+    
+      [read, description ("Guid of the COM server implementing"
+              "INapComponentInfo interface")]
+    string infoClsid;
+    
+      [read, description ("Registration date of the SHA")]
+    string registrationDate;
+
+      [read, description ("SHA bound to the NAP Agent")]
+    boolean isBound;
+    
+      [read, description("Fixup state of the SHA"),
+      Values{"FixupState_Success",
+             "FixupState_InProgress",
+             "FixupState_CouldNotUpdate"}]
+    uint32 fixupState;
+    
+      [read, description ("Percent Fix-up complete "
+                "value 101 - percentage is not supported")]
+    uint8 percentage;
+};
+
+
+// NAP_EnforcementClient
+// Static and dynamic information about the enforcer
+//
+[
+    description("NAP EnforcementClient - provides "
+       "information about the registered enforcers"), 
+    dynamic: ToInstance, 
+    provider("NAP_ClientProvider")
+]
+
+class NAP_EnforcementClient
+{      
+      [key, read, description ("EnforcementEntity Id")]
+    uint32 id;
+
+      [read, description ("FriendlyName for the EC")]
+    string friendlyName;
+    
+     [read, description ("Description of the EC")]
+    string description;
+
+      [read, description ("Version number of the EC")]
+    string version;
+        
+      [read, description ("VendorName of the EC")]
+    string vendorName;
+  
+      [read, description ("Guid of the COM server implementing"
+              "INapComponentInfo interface")]
+    string infoClsid;
+    
+      [read, description ("Registration date of the EC")]
+    string registrationDate;
+
+      [read, description ("NapEC is bound to NAPAgent")]
+    boolean isBound;
+};

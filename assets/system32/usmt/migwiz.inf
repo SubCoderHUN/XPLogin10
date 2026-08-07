@@ -1,0 +1,330 @@
+[version]
+Signature=$Windows NT$
+DriverVer=07/01/2001,5.1.2535.0
+
+[CopyFiles]
+guitrn.dll, guitrn_u.dll
+guitrna.dll, guitrna_a.dll
+migism.dll, migism_u.dll
+migisma.dll, migisma_a.dll
+migism.inf
+log.dll
+migapp.inf
+migsys.inf
+miguser.inf
+archiveapp.inf, NO_FAIL
+migwiz.exe, migwiz_u.exe
+migwiza.exe, migwiza_a.exe
+migwiz.inf
+script.dll, script_u.dll
+scripta.dll, scripta_a.dll
+shfolder.dll
+sysfiles.inf
+sysmod.dll, sysmod_u.dll
+sysmoda.dll, sysmoda_a.dll
+usmtdef.inf
+migres.dll, NO_FAIL
+xpsp3res.dll
+cobramsg.dll, NO_FAIL
+migwiz.exe.manifest, NO_FAIL
+migload.exe, FASTWiz.exe, NO_COMPRESS
+
+[OOBE]
+RasConnection
+Printers
+Mouse and Keyboard
+International
+Shell
+
+; .Ext sections are used only when non-floppy medium is used for transfer
+
+[Settings Only]
+Accessibility
+Browser
+BrowserSecurity
+RasConnection
+Net Printers and Drives
+Mouse and Keyboard
+Display
+ScreenSaver
+FolderOptions
+International
+Shell
+TaskBar
+
+[Settings Only.Ext]
+Multimedia
+Acrobat Reader 40
+Acrobat Reader 50
+Acrobat Reader 60
+Adobe Photoshop CS 8
+CmdExe
+CuteFTP 6 Professional
+Eudora5or6
+ICQ2003bPro
+LotusSS
+MM JukeBox
+Microsoft Office
+Microsoft Access 97
+Microsoft Excel 97
+Microsoft PowerPoint 97
+Microsoft Word 97
+Microsoft Outlook 97 & 98
+Microsoft Access 2000
+Microsoft Excel 2000
+Microsoft FrontPage 2000
+Microsoft Outlook 2000
+Microsoft PhotoDraw 2000
+Microsoft PowerPoint 2000
+Microsoft Publisher 2000
+Microsoft Word 2000
+Microsoft Access XP
+Microsoft Excel XP
+Microsoft FrontPage XP
+Microsoft FrontPage 2002
+Microsoft Outlook XP
+Microsoft PhotoDraw XP
+Microsoft PowerPoint XP
+Microsoft Publisher XP
+Microsoft Word XP
+Microsoft FrontPage 2003
+Microsoft Works 7.0
+MS MediaPlayer 7-9
+MSN Messenger 61
+Notes6x
+Odigo4
+Outlook Express
+Quicken 2001 Home and Business
+QuickTime Player 5or6
+RealPlayer Basic
+WinAmp5
+WinZip8or9
+WordPerfect Office 11
+WordPerfect Office 12
+WsFTP8Pro
+Yahoo Messenger
+QuickenHAndB
+
+[Files Only]
+Extensions
+Fonts
+Desktop
+Shared Desktop
+My Pictures
+My Documents
+Shared Documents
+Quick Launch
+
+[Files Only.Ext]
+
+[Files and Settings]
+Accessibility
+RasConnection
+Net Printers and Drives
+Mouse and Keyboard
+Display
+ScreenSaver
+FolderOptions
+Browser
+BrowserSecurity
+International
+Shell
+TaskBar
+Extensions
+Fonts
+Desktop
+Shared Desktop
+My Pictures
+My Documents
+Shared Documents
+Quick Launch
+Acrobat Reader 40
+Acrobat Reader 50
+Adobe Photoshop CS 8
+CmdExe
+CuteFTP 6 Professional
+Eudora5or6
+ICQ2003bPro
+LotusSS
+MM JukeBox 6
+Microsoft Office
+Microsoft Access 97
+Microsoft Excel 97
+Microsoft PowerPoint 97
+Microsoft Word 97
+Microsoft Outlook 97 & 98
+Microsoft Access 2000
+Microsoft Excel 2000
+Microsoft FrontPage 2000
+Microsoft Outlook 2000
+Microsoft PhotoDraw 2000
+Microsoft PowerPoint 2000
+Microsoft Publisher 2000
+Microsoft Word 2000
+Microsoft Access XP
+Microsoft Excel XP
+Microsoft FrontPage XP
+Microsoft Outlook XP
+Microsoft PhotoDraw XP
+Microsoft PowerPoint XP
+Microsoft Publisher XP
+Microsoft Word XP
+Microsoft FrontPage 2003
+Microsoft Works 7.0
+MS MediaPlayer 7-9
+MSN Messenger 61
+Notes6x
+Odigo4
+Outlook Express
+Quicken 2001 Home and Business
+QuickTime Player 5or6
+RealPlayer Basic
+WinAmp5
+WinZip8or9
+WordPerfect Office 11
+WordPerfect Office 12
+WsFTP8Pro
+Yahoo Messenger
+QuickenHAndB
+
+[Screened Extensions]
+drv
+vxd
+386
+sys
+
+[Files and Settings.Ext]
+Multimedia
+
+[EXT.IgnoreEXE]
+%1
+accwiz.exe
+clipbrd.exe
+CCdialer.exe
+CChat.exe
+CScript.exe
+depends.exe
+DRWATSON.EXE
+explorer.exe
+fontview.exe
+grpconv.exe
+HelpCtr.exe
+hh.exe
+HYPERTRM.EXE
+iexplore.exe
+Internet
+ISIGNUP.EXE
+mmc.exe
+mshta.exe
+msiexec.exe
+MSInfo32.exe
+mstsc.exe
+NOTEPAD.EXE
+ntbackup.exe
+perfmon.exe
+rasphone.exe
+regedit.exe
+REGSVR32.EXE
+rundll32.exe
+SDBINST.EXE
+THEMES.EXE
+wab.exe
+wb32.exe
+winhlp32.exe
+wpnpinst.exe
+WScript.exe
+
+[EXT.Exclude]
+386
+bat
+cab
+cmd
+com
+dll
+dmp
+exe
+fon
+inf
+ini
+lnk
+pbk
+pdb
+pif
+vxd
+scr
+ttf
+htm
+html
+mht
+mhtml
+aif
+aifc
+aiff
+AudioCD
+cda
+DVD
+IVF
+m1v
+mp2v
+mpe
+mpv2
+waw
+wax
+wmd
+wmp
+wms
+wmv
+wmx
+wmz
+wvx
+ra
+rf
+rjs
+rmi
+rmm
+rmp
+rms
+rmx
+rnx
+rp
+rsml
+rt
+rv
+smi
+smil
+ssm
+ics
+vcs
+MAD
+
+[EXT.Include]
+
+[AppsToInstallOnDest]
+Acrobat Reader 40
+Acrobat Reader 50
+Adobe Photoshop Suite 6
+AIM
+CuteFTP 4
+Eudora 5
+GameVoice 1
+GetRight 4
+GoZilla
+ICQ
+LotusSS
+MM JukeBox 6
+MSN Zone 6
+Microsoft Works 2001
+Odigo4
+Quicken 2001
+QuickTime Player 5or6
+RealJukebox 2 Basic
+RealPlayer Basic
+Sonique
+WinAmp5
+WinZip8or9
+WsFTP8Pro
+Yahoo Messenger
+QuickenHAndB
+
+[Strings]
+

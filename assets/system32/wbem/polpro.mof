@@ -1,0 +1,709 @@
+#include ( "POLBASE.MOF" )
+
+#pragma classflags( "forceupdate" )
+
+///////////////////////////////////////////////////////////////////////////////
+// Policy Maker Pro RSoP base class
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrProSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Abstract,
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrProSetting for American "
+      "English" ) : Amended
+]
+class RSOP_PolmkrProSetting : RSOP_PolmkrSetting
+{
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Policy Maker Pro RSoP classes common to both User and Computer 
+// namespaces
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrEnvironmentSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrEnvironmentSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrEnvironmentSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrFileSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrFileSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrFileSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrFolderSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrFolderSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrFolderSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrIniFileSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrIniFileSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrIniFileSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrRegistrySetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrRegistrySetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrRegistrySetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrPrinterSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrPrinterSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrPrinterSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrLocalPrinterSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrLocalPrinterSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrLocalPrinterSetting : RSOP_PolmkrPrinterSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrPortPrinterSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrPortPrinterSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrPortPrinterSetting : RSOP_PolmkrPrinterSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrShortcutSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrShortcutSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrShortcutSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrDataSourceSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrDataSourceSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrDataSourceSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrDeviceSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrDeviceSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrDeviceSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrDialupOptionSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrDialupOptionSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrDialupOptionSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrFolderOptionSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrFolderOptionSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrFolderOptionSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrFolderOptionSettingVista
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrFolderOptionSettingVista for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrFolderOptionSettingVista : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrLocalUsersAndGroupsSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrLocalUsersAndGroupsSetting "
+      "for American English" ) : Amended
+]
+class RSOP_PolmkrLocalUsersAndGroupsSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrLocalUsersSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrLocalUsersSetting "
+      "for American English" ) : Amended
+]
+class RSOP_PolmkrLocalUsersSetting : RSOP_PolmkrLocalUsersAndGroupsSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrLocalGroupsSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrLocalGroupsSetting "
+      "for American English" ) : Amended
+]
+class RSOP_PolmkrLocalGroupsSetting : RSOP_PolmkrLocalUsersAndGroupsSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrNetworkOptionSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrNetworkOptionSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrNetworkOptionSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrNtServiceSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrNtServiceSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrNtServiceSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrPowerSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrPowerSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrPowerSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrPowerOptionsSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrPowerOptionsSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrPowerOptionsSetting : RSOP_PolmkrPowerSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrPowerSchemeSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrPowerSchemeSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrPowerSchemeSetting : RSOP_PolmkrPowerSetting
+{
+   uint32 precedence;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrRegionOptionSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrRegionOptionSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrRegionOptionSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrTaskSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrTaskSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrTaskSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrSchedTaskSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrSchedTaskSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrSchedTaskSetting : RSOP_PolmkrTaskSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrImmediateTaskSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrImmediateTaskSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrImmediateTaskSetting : RSOP_PolmkrTaskSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrStartMenuSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrStartMenuSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrStartMenuSetting : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrStartMenuSettingVista
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrStartMenuSettingVista for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrStartMenuSettingVista : RSOP_PolmkrProSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrProSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Inherited from RSOP_PolmkrProSetting." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrServerSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Abstract,
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrServerSetting for American "
+      "English" ) : Amended
+]
+class RSOP_PolmkrServerSetting : RSOP_PolmkrSetting
+{
+};

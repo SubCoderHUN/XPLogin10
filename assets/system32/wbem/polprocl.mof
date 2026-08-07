@@ -1,0 +1,67 @@
+#pragma autorecover
+#pragma classflags("forceupdate")
+
+//------------------------------------------------
+// Same as qualifiers list in rsopcore.mof
+//------------------------------------------------
+
+Qualifier Description : ToSubClass Amended;
+Qualifier Values : ToSubClass Amended;
+Qualifier DisplayName : ToSubClass Amended;
+Qualifier BitValues:ToSubClass Amended ;
+
+Qualifier Aggregate : ToSubClass ;
+Qualifier ValueMap : ToSubClass ;
+Qualifier Aggregation : ToSubClass ; 
+Qualifier ArrayType : ToSubClass ;
+Qualifier Association : ToInstance ToSubClass DisableOverride ; 
+Qualifier BitMap : ToSubClass ;
+Qualifier CIM_Key : ToSubClass ;
+Qualifier CIMTYPE : ToSubClass ;
+Qualifier Deprecated : ToSubClass ;
+Qualifier Enumeration : ToSubClass ;
+Qualifier EnumPrivileges : ToSubClass ;
+Qualifier ImplementationSource : ToSubClass ;
+Qualifier Key : ToInstance ToSubClass DisableOverride ;
+Qualifier Locale : ToInstance ;
+Qualifier MappingStrings : ToSubClass ;
+Qualifier Max : ToSubClass ;
+Qualifier MaxLen : ToSubClass ;
+Qualifier Min : ToSubClass ;
+Qualifier ModelCorrespondence : ToSubClass ;
+Qualifier Not_Null : ToSubClass ;
+Qualifier Override : Restricted ;
+Qualifier Privileges : ToSubClass ; 
+Qualifier Propagated : ToSubClass ;
+Qualifier provider : ToInstance ;
+Qualifier Range : ToSubClass ;
+Qualifier Read : ToSubClass ;
+Qualifier Schema : ToInstance ;
+Qualifier Singleton : ToSubClass ToInstance ;
+Qualifier SUBTYPE : ToSubClass ;
+Qualifier Units : ToSubClass ;
+Qualifier UUID : ToInstance ;
+Qualifier Volatile : ToSubClass ; 
+Qualifier Weak : ToSubClass ;
+Qualifier Write : ToSubClass ;
+Qualifier WritePrivileges : ToSubClass ;
+
+//------------------------------------------------
+// Classes in user sub-namespace
+//------------------------------------------------
+
+#pragma namespace("\\\\.\\root\\RSOP\\User")
+
+#include ("polprou.mof")
+
+//------------------------------------------------
+// Classes in computer sub-namespace
+//------------------------------------------------
+
+#pragma namespace("\\\\.\\root\\RSOP\\Computer")
+
+#include ("polproc.mof")
+
+//--------------------------------------------
+// End of file
+//---------------------------------------------

@@ -1,0 +1,48 @@
+#include ( "POLPRO.MOF" )
+
+#pragma classflags( "forceupdate" )
+
+///////////////////////////////////////////////////////////////////////////////
+// Policy Maker Pro RSoP classes specific to the Computer namespace
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrFileTypesSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrFileTypesSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrFileTypesSetting : RSOP_PolmkrFolderOptionSetting
+{
+   uint32 precedence;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// RSOP_PolmkrNetShareSetting
+///////////////////////////////////////////////////////////////////////////////
+[
+   Locale( 0x409 ),
+   Description( "Localized version of RSOP_PolmkrNetShareSetting for "
+      "American English" ) : Amended
+]
+class RSOP_PolmkrNetShareSetting : RSOP_PolmkrServerSetting
+{
+   ////////////////////////////////////////////////////////////////////////////
+   // Keys from RSOP_PolmkrNetShareSetting
+   ////////////////////////////////////////////////////////////////////////////
+   [
+      key,
+      Description( "Policy ID." ) : Amended,
+      DisplayName( "Id" ) : Amended
+   ]
+   string id;
+
+   [
+      key,
+      Description( "Policy Precedence." ) : Amended,
+      DisplayName( "Precedence" ) : Amended
+   ]
+   uint32 precedence;
+};
