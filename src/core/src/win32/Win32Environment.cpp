@@ -324,6 +324,12 @@ ControllerDependencies MakeWin32Dependencies(const AppConfig& config,
     ControllerDependencies deps;
     deps.authenticator = useDeferredAuthenticator ? MakeDeferredLsaAuthenticator()
                                                   : MakeWin32Authenticator();
+    // The deferred authenticator cannot answer a question - it only defers to
+    // LSA - so the blank-password probe gets its own direct LogonUserW path.
+    // This is the "optional pre-flight check" MakeWin32Authenticator was left
+    // for: before the screen decides to sign itself in, it confirms with LSA
+    // that the sole account really does take an empty password.
+    deps.blankPasswordProber = MakeWin32Authenticator();
     deps.userEnumerator = MakeWin32UserEnumerator();
     // Deliberately no session manager.
     //

@@ -219,6 +219,23 @@ IFACEMETHODIMP XPCredential::SetSelected(BOOL* autoLogon) {
     }
     window_->Show();
 
+    // One account with no password signs itself in, the way XP did: the welcome
+    // screen comes up and the machine lets itself through with nothing to type.
+    // We prime the credentials once - the first time the tile is selected - and
+    // set *autoLogon so LogonUI collects them straight away, exactly as it does
+    // after the user presses Enter. The controller has already confirmed with
+    // LSA (via the blank-password probe) that the empty password will be taken;
+    // if it is turned down anyway the controller disarms itself and the next
+    // SetSelected leaves an ordinary password box.
+    if (autoLogon && !autoSignInAttempted_ && controller_->SignsInAutomatically()) {
+        autoSignInAttempted_ = true;
+        if (controller_->PrepareAutomaticSignIn()) {
+            submitPending_ = true;
+            *autoLogon = TRUE;
+            XPLOG_INFO("one account and no password: signing in without asking");
+        }
+    }
+
     // The screen is up and taking input, so this start was not a crash-loop.
     // Clearing the strike counter here rather than only on a successful logon
     // is what stops ordinary Win+L cycles from switching the screen off after

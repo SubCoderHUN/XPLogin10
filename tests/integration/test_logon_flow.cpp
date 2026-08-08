@@ -22,6 +22,9 @@ struct Rig {
         std::make_shared<FakeAccountDatabase>(L"WINBOX");
     std::shared_ptr<FakeAuthenticator> auth;
     std::shared_ptr<FakeUserEnumerator> users;
+    // Optional blank-password prober. Left null by default so the existing
+    // tests keep their flag-based behaviour; the auto sign-in tests set one.
+    std::shared_ptr<FakeAuthenticator> prober;
     std::shared_ptr<FakeSessionManager> sessions = std::make_shared<FakeSessionManager>();
     std::shared_ptr<FakePowerController> power = std::make_shared<FakePowerController>();
     std::shared_ptr<FakeSoundPlayer> sound = std::make_shared<FakeSoundPlayer>();
@@ -47,6 +50,7 @@ struct Rig {
         deps.soundPlayer = sound;
         deps.clock = clock;
         deps.stateStore = store;
+        deps.blankPasswordProber = prober;
 
         auto controller = std::make_unique<LogonController>(deps, config);
         controller->SetObserver(&observer);
@@ -650,5 +654,112 @@ TEST(LogonFlow, ASecondAccountBringsTheScreenBack) {
     auto controller = rig.Make();
     controller->Initialize(UsageScenario::Logon);
 
+    CHECK_FALSE(controller->SignsInAutomatically());
+}
+
+// The account list LogonUI hands over in SetUserArray does not carry the
+// blankPassword hint, so a passwordless account arrives looking as though it
+// has one. The probe is what recovers the truth - and it is why the welcome
+// screen stopped signing itself in.
+TEST(LogonFlow, TheProbeSignsInWhenTheAccountHintIsMissing) {
+    SoleAccountRig rig;
+    rig.db->Accounts().front().account.blankPassword = false; // as SetUserArray leaves it
+    rig.prober = std::make_shared<FakeAuthenticator>(rig.db);
+
+    auto controller = rig.Make();
+    controller->Initialize(UsageScenario::Logon);
+
+    CHECK(controller->SignsInAutomatically());
+}
+
+// And the other way: the hint is optimistic but the account really does have a
+// password. LSA - the probe - overrules the hint, so the screen does not throw
+// a doomed blank password at LogonUI.
+TEST(LogonFlow, TheProbeRefusesWhenTheAccountReallyHasAPassword) {
+    SoleAccountRig rig;
+    rig.db->Accounts().front().password = L"hunter2";
+    rig.db->Accounts().front().account.blankPassword = true; // stale hint
+    rig.prober = std::make_shared<FakeAuthenticator>(rig.db);
+
+    auto controller = rig.Make();
+    controller->Initialize(UsageScenario::Logon);
+
+    CHECK_FALSE(controller->SignsInAutomatically());
+}
+
+// A probe is a real logon; it must not happen again every time the account list
+// is re-queried (SetUserArray, then the watchdog).
+TEST(LogonFlow, TheBlankPasswordProbeIsCached) {
+    SoleAccountRig rig;
+    rig.db->Accounts().front().account.blankPassword = false;
+    rig.prober = std::make_shared<FakeAuthenticator>(rig.db);
+
+    auto controller = rig.Make();
+    controller->Initialize(UsageScenario::Logon);
+    controller->RefreshUsers();
+    controller->RefreshUsers();
+
+    CHECK(controller->SignsInAutomatically());
+    CHECK_EQ(rig.prober->attempts, 1);
+}
+
+// The whole point: the automatic sign-in hands LSA the account name with an
+// empty password, down the same path a typed one takes.
+TEST(LogonFlow, TheAutomaticSignInHandsLsaTheBlankPassword) {
+    SoleAccountRig rig;
+    rig.auth->asynchronous = true;
+    auto controller = rig.Make();
+    controller->Initialize(UsageScenario::Logon);
+    REQUIRE(controller->SignsInAutomatically());
+
+    // What the credential provider does the first time the screen appears.
+    CHECK(controller->PrepareAutomaticSignIn());
+    CHECK_EQ(controller->State(), UiState::Authenticating);
+    REQUIRE(controller->CanSerialize());
+
+    PackedCredential packed;
+    REQUIRE(controller->BuildSerialization(0, 8, &packed));
+    const KerbLayout layout = KerbLayout::For(8);
+    std::u16string password = u"unset";
+    REQUIRE(ReadPackedString(packed, layout.passwordOffset, 8, &password));
+    CHECK(password.empty());
+
+    // LSA takes it and the desktop comes up.
+    controller->OnAuthReported(rig.auth->ResolvePending());
+    CHECK_EQ(controller->State(), UiState::LoggedOn);
+    CHECK_EQ(rig.observer.logonCompleteCount, 1);
+}
+
+TEST(LogonFlow, TheAutomaticSignInCompletesEndToEnd) {
+    SoleAccountRig rig; // Kiosk, no password, synchronous LSA
+    auto controller = rig.Make();
+    controller->Initialize(UsageScenario::Logon);
+    REQUIRE(controller->SignsInAutomatically());
+
+    controller->PrepareAutomaticSignIn();
+
+    CHECK_EQ(controller->State(), UiState::LoggedOn);
+    CHECK_EQ(rig.observer.logonCompleteCount, 1);
+    CHECK(EqualsNoCase(rig.observer.logonUser, L"Kiosk"));
+}
+
+// If the blank password is turned down at the real logon, the screen has to
+// stop being the busy welcome screen and become an ordinary one - otherwise it
+// sits on "Welcome" with no password box and no way in.
+TEST(LogonFlow, ARejectedAutomaticSignInFallsBackToThePasswordScreen) {
+    SoleAccountRig rig;
+    rig.auth->asynchronous = true;
+    auto controller = rig.Make();
+    controller->Initialize(UsageScenario::Logon);
+    REQUIRE(controller->SignsInAutomatically());
+    REQUIRE(controller->PrepareAutomaticSignIn());
+
+    controller->OnAuthReported(AuthResult::Fail(AuthStatus::BadPassword));
+
+    CHECK_FALSE(controller->SignsInAutomatically()); // disarmed
+    CHECK_EQ(controller->State(), UiState::AuthFailed);
+
+    // And it is not armed again when the account list is re-queried.
+    controller->RefreshUsers();
     CHECK_FALSE(controller->SignsInAutomatically());
 }

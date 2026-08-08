@@ -39,6 +39,15 @@ struct ControllerDependencies {
     std::shared_ptr<ISoundPlayer>    soundPlayer;
     std::shared_ptr<IClock>          clock;
     std::shared_ptr<IStateStore>     stateStore;
+
+    // Answers one question, before the screen is shown: does the sole account
+    // really accept a blank password? A synchronous authenticator (LogonUserW
+    // on Windows) is asked with an empty password; success means the account
+    // has none. This is the only reliable signal - the SAM's UF_PASSWD_NOTREQD
+    // flag is a hint, not a fact, and it does not survive the account list
+    // LogonUI hands over in SetUserArray. Optional: when null, the account's
+    // blankPassword hint is trusted instead (which is what the unit tests do).
+    std::shared_ptr<IAuthenticator>  blankPasswordProber;
 };
 
 class LogonController {
@@ -104,10 +113,23 @@ public:
     // True when this screen should sign in on its own, showing XP's welcome
     // message and never an account list. See SignsInWithoutAsking.
     //
+    // Decided once, when the account list settles (Initialize / RefreshUsers),
+    // and cached: it is read on every frame, and a blank-password probe is a
+    // real logon that must not be repeated per paint. An automatic sign-in that
+    // LSA turns down clears this, so the screen falls back to an ordinary one.
+    //
     // Sign-in only. An unlock has to stay a screen even for an account with no
     // password: Win+L that let go of itself the moment it was pressed would be
     // a lock that does not lock.
     bool SignsInAutomatically() const;
+
+    // Drives the automatic sign-in: selects the sole account and hands LSA an
+    // empty password, along the very same path a typed password takes. Returns
+    // true when the controller is left ready for GetSerialization to pack the
+    // blob (Authenticating, with a user selected). The credential provider
+    // calls this once, the first time the screen appears for an account that
+    // SignsInAutomatically(); a no-op and false in any other state.
+    bool PrepareAutomaticSignIn();
 
     void SetObserver(IControllerObserver* observer) { observer_ = observer; }
 
@@ -144,6 +166,14 @@ private:
     void ApplyStateChange(UiState previous);
     void CompleteLogon();
 
+    // Recomputes the cached SignsInAutomatically() decision. Runs whenever the
+    // account list changes.
+    void EvaluateAutomaticSignIn();
+    // Asks the prober whether `account` signs in with a blank password, caching
+    // the answer for the life of the screen so the same account is not probed
+    // (i.e. logged on and off) again on the next RefreshUsers.
+    bool ProbeBlankPassword(const UserAccount& account);
+
     ControllerDependencies deps_;
     AppConfig              config_;
     UserDirectory          directory_;
@@ -157,6 +187,16 @@ private:
     UsageScenario scenario_ = UsageScenario::Invalid;
     uint32_t      logonSessionId_ = 0;
     bool          initialized_ = false;
+
+    // Cached SignsInAutomatically() decision and its guard rails.
+    bool          autoSignIn_ = false;
+    // Set when an automatic sign-in is rejected, so it is not armed again for
+    // the rest of this screen. Cleared on Initialize.
+    bool          autoSignInBlocked_ = false;
+    // ProbeBlankPassword's one-entry cache, keyed by qualified account name.
+    std::wstring  blankProbeName_;
+    bool          blankProbeResult_ = false;
+    bool          blankProbeValid_ = false;
 };
 
 } // namespace xplogin

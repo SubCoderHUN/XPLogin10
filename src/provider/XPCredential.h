@@ -136,6 +136,11 @@ private:
     // the credentials up in GetSerialization.
     bool submitPending_ = false;
 
+    // Guards the one automatic sign-in this tile is allowed. Without it a
+    // rejected blank password would be re-submitted every time LogonUI
+    // re-selected the tile, i.e. an auto-logon loop.
+    bool autoSignInAttempted_ = false;
+
     // The tile picture handed to LogonUI. Created once, owned here.
     HBITMAP tileBitmap_ = nullptr;
 };

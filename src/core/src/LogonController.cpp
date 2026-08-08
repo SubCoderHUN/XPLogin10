@@ -24,6 +24,11 @@ bool LogonController::Initialize(UsageScenario scenario) {
     SecureClear(password_);
     machine_.Handle(UiEvent::Reset);
 
+    // A fresh screen: let the automatic sign-in be armed again, and drop any
+    // blank-password probe cached from a previous appearance.
+    autoSignInBlocked_ = false;
+    blankProbeValid_ = false;
+
     StateMachinePolicy policy;
     policy.scenario = scenario;
     policy.allowShutdown = config_.allowShutdown && scenario != UsageScenario::CredUI;
@@ -88,6 +93,7 @@ void LogonController::RefreshUsers() {
     if (scenario_ != UsageScenario::UnlockWorkstation) {
         machine_.SetUsers(directory_.Users());
     }
+    EvaluateAutomaticSignIn();
     if (observer_) {
         observer_->OnUsersChanged();
     }
@@ -145,9 +151,78 @@ void LogonController::SetPassword(const std::wstring& password) {
 }
 
 bool LogonController::SignsInAutomatically() const {
-    return config_.users.autoLogonBlankPassword &&
-           scenario_ == UsageScenario::Logon &&
-           SignsInWithoutAsking(machine_.Users());
+    return autoSignIn_;
+}
+
+void LogonController::EvaluateAutomaticSignIn() {
+    autoSignIn_ = false;
+
+    // A rejected automatic sign-in is not retried for the rest of this screen;
+    // Initialize clears the block for the next appearance.
+    if (autoSignInBlocked_) {
+        return;
+    }
+    if (scenario_ != UsageScenario::Logon || !config_.users.autoLogonBlankPassword) {
+        return;
+    }
+
+    // Exactly one account, and one that can actually come in. This mirrors
+    // SignsInWithoutAsking, but the blank-password decision below is made by the
+    // prober rather than the account's own hint, which the SetUserArray list
+    // does not carry.
+    const std::vector<UserAccount>& users = machine_.Users();
+    if (users.size() != 1) {
+        return;
+    }
+    const UserAccount& only = users.front();
+    if (only.disabled || only.lockedOut || only.passwordExpired) {
+        return;
+    }
+
+    bool blank = only.blankPassword;
+    // Only a local account is worth probing: for a domain or Microsoft account
+    // an empty-password LogonUserW would be a pointless round trip to a DC or
+    // the cloud, and neither signs in with no password anyway.
+    if (deps_.blankPasswordProber && only.source == AccountSource::Local) {
+        blank = ProbeBlankPassword(only);
+    }
+    autoSignIn_ = blank;
+}
+
+bool LogonController::ProbeBlankPassword(const UserAccount& account) {
+    const std::wstring identity = account.QualifiedName();
+    if (blankProbeValid_ && EqualsNoCase(blankProbeName_, identity)) {
+        return blankProbeResult_;
+    }
+
+    LogonRequest probe;
+    probe.scenario = UsageScenario::Logon;
+    probe.domain = account.domain;
+    probe.username = account.username;
+    probe.password.clear(); // the whole question: is the password blank?
+
+    const AuthResult result = deps_.blankPasswordProber->Authenticate(probe);
+    blankProbeName_ = identity;
+    blankProbeResult_ = result.Ok();
+    blankProbeValid_ = true;
+
+    XPLOG_INFO("blank-password probe for %s: %s", WideToUtf8(identity).c_str(),
+               result.Ok() ? "accepted, signing in without asking"
+                           : "rejected, the account needs a credential");
+    return blankProbeResult_;
+}
+
+bool LogonController::PrepareAutomaticSignIn() {
+    if (!autoSignIn_ || machine_.State() != UiState::UserList ||
+        machine_.Users().size() != 1) {
+        return false;
+    }
+    if (SelectUser(0) != TransitionResult::Accepted) {
+        return false;
+    }
+    // The blank password the account is about to be let in with.
+    SetPassword(std::wstring());
+    return Submit() == TransitionResult::Accepted && CanSerialize();
 }
 
 LogonRequest LogonController::CurrentRequest() const {
@@ -220,6 +295,16 @@ void LogonController::OnAuthReported(const AuthResult& result) {
         XPLOG_INFO("authentication rejected: status=%d nt=0x%08x",
                    static_cast<int>(result.status),
                    static_cast<unsigned>(result.ntStatus));
+
+        // An automatic sign-in that LSA turned down becomes an ordinary screen:
+        // disarm it so the password box is reachable, and block it for the rest
+        // of this screen so it does not fire again the next time LogonUI selects
+        // the tile.
+        if (autoSignIn_) {
+            autoSignIn_ = false;
+            autoSignInBlocked_ = true;
+            XPLOG_INFO("automatic sign-in rejected; showing the password screen");
+        }
     }
 }
 
